@@ -33,7 +33,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="vps" scheme="http://jerryshi.com/tags/vps/"/>
@@ -75,7 +75,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="shadowsocks" scheme="http://jerryshi.com/tags/shadowsocks/"/>
@@ -135,7 +135,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="shadowsocks" scheme="http://jerryshi.com/tags/shadowsocks/"/>
@@ -162,7 +162,7 @@
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
   </entry>
@@ -194,7 +194,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="K3" scheme="http://jerryshi.com/tags/K3/"/>
@@ -227,7 +227,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="K3" scheme="http://jerryshi.com/tags/K3/"/>
@@ -259,7 +259,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="K3" scheme="http://jerryshi.com/tags/K3/"/>
@@ -284,7 +284,7 @@
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="K3" scheme="http://jerryshi.com/tags/K3/"/>
@@ -316,7 +316,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
       <category term="K3" scheme="http://jerryshi.com/tags/K3/"/>
@@ -373,7 +373,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="技术" scheme="http://jerryshi.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
     
     
   </entry>
@@ -399,7 +399,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
       <category term="站务" scheme="http://jerryshi.com/tags/%E7%AB%99%E5%8A%A1/"/>
@@ -426,7 +426,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
   </entry>
@@ -449,7 +449,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
       <category term="站务" scheme="http://jerryshi.com/tags/%E7%AB%99%E5%8A%A1/"/>
@@ -520,7 +520,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
   </entry>
@@ -555,7 +555,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
   </entry>
@@ -580,7 +580,7 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
     
     </summary>
     
-      <category term="生活" scheme="http://jerryshi.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://jerryshi.com/categories/life/"/>
     
     
   </entry>
