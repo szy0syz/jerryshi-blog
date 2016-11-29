@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://jerryshi.com">
+  <title>由CCNA1初探路由信息协议(RIP) | 施振宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先我们解释一下什么是路由信息协议(RIP)？
+路由信息协议(RIP)，是一种使用最广泛的内部网关协议，RIP用跳数(距离)作为它的路由选择度量标准。
+既然知道了什么是RIP，我们用一个小命令学习一下RIP里的跳数。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="由CCNA1初探路由信息协议(RIP)">
+<meta property="og:url" content="http://jerryshi.com/2009/08/26/ccna1-rip/index.html">
+<meta property="og:site_name" content="施振宇的博客">
+<meta property="og:description" content="首先我们解释一下什么是路由信息协议(RIP)？
+路由信息协议(RIP)，是一种使用最广泛的内部网关协议，RIP用跳数(距离)作为它的路由选择度量标准。
+既然知道了什么是RIP，我们用一个小命令学习一下RIP里的跳数。">
+<meta property="og:updated_time" content="2016-11-25T06:15:24.889Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="由CCNA1初探路由信息协议(RIP)">
+<meta name="twitter:description" content="首先我们解释一下什么是路由信息协议(RIP)？
+路由信息协议(RIP)，是一种使用最广泛的内部网关协议，RIP用跳数(距离)作为它的路由选择度量标准。
+既然知道了什么是RIP，我们用一个小命令学习一下RIP里的跳数。">
+  
+    <link rel="alternative" href="/atom.xml" title="施振宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jerry Shi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">技术&amp;生活</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/demos">Demos</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Jerry Shi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jerry Shi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">技术&amp;生活</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/demos">Demos</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-ccna1-rip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      由CCNA1初探路由信息协议(RIP)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>首先我们解释一下什么是路由信息协议(RIP)？
+路由信息协议(RIP)，是一种使用最广泛的内部网关协议，RIP用跳数(距离)作为它的路由选择度量标准。
+既然知道了什么是RIP，我们用一个小命令学习一下RIP里的跳数。
+</code></pre><a id="more"></a>
+<p><code>C:\Documents and Settings\shiiiilex&amp;gt;tracert shizhenyu.name</code></p>
+<p>Tracing route to shizhenyu.name [69.163.136.245]<br>over a maximum of 30 hops:</p>
+<p><span style="color: #ff0000;">1</span> 6 ms 10 ms 10 ms 1.172.160.60.broad.yx.yn.dynamic.163data.com.cn<br>[60.160.172.1]<br><span style="color: #ff0000;">2</span> 2 ms 2 ms 3 ms 60.160.191.37<br><span style="color: #ff0000;">3</span> 18 ms 23 ms 20 ms 225.158.62.218.other.km.yn.dynamic.163data.com.c<br>n [218.62.158.225]<br><span style="color: #ff0000;">4</span> 94 ms 94 ms 94 ms 202.97.47.245<br><span style="color: #ff0000;">5</span> 94 ms 93 ms 93 ms 202.97.33.126<br><span style="color: #ff0000;">6</span> 95 ms 93 ms 50 ms 202.97.60.197<br><span style="color: #ff0000;">7</span> 295 ms 296 ms 263 ms 202.97.51.222<br><span style="color: #ff0000;">8</span> 284 ms 283 ms 251 ms 202.97.49.158<br><span style="color: #ff0000;">9</span> 240 ms 210 ms 205 ms 75.149.229.193<br><span style="color: #ff0000;">10</span> 275 ms 274 ms 275 ms pos-1-3-0-0-cr01.losangeles.ca.ibone.comcast.net<br>[68.86.86.57]<br><span style="color: #ff0000;">11</span> 249 ms 253 ms 285 ms 75.149.228.206<br><span style="color: #ff0000;">12</span> 284 ms 252 ms 284 ms ip-66-33-201-68.dreamhost.com [66.33.201.68]<br><span style="color: #ff0000;">13</span> 261 ms 295 ms 291 ms apache2-emu.mariners.dreamhost.com [69.163.136.2<br>45]</p>
+<pre><code>由以上结果可知，从我本地网络到我的博客需要经过13跳，因为服务器在美国，所以有点多。当然，为了检测RIP的唯一性，我打了数十次tracert命令，其始终选择了这条路径。故可知，此条路径是源主机和目的主机之间跳数最少的一条路径。
+
+然后我们来看看这些跳数里的都有什么呢。第一跳，毋庸置疑是本地的网关(玉溪)。然后经过昆明，北京，上海，广州等中国电信的骨干网上打转转，直到第9跳终于到美国本土。
+
+所以说，如网站放在美国主机，ping的速度一般都超过200ms。记得以前一个朋友在淘宝买过一个美国XX主机，ping只有90ms，后来查了一下原来此IP是专门分配香港某公司的，然某位朋友又用美国服务器ping此XX主机，速度超过240ms+，答案则很明显。
+
+唧唧歪歪了这么半天，其实还是初学者，某位大虾推荐我看看《TCP/IP路由技术第一卷》，可以深入了解RIP，可惜我连CCNA1都学得半懂不懂的，以后看完了再好好深入吧。
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2009/08/26/ccna1-rip/" class="archive-article-date">
+  	<time datetime="2009-08-26T13:58:05.000Z" itemprop="datePublished"><i class="icon-clock"></i>2009-08-26</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2009/08/27/time-flows/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          杂谈：光阴如水流逝
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2009/08/25/my-ccna1-summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">思科网络学院教程CCNA1学习小结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ccna1-rip" data-title="由CCNA1初探路由信息协议(RIP)" data-url="http://jerryshi.com/2009/08/26/ccna1-rip/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"szy0syz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jerry Shi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten | <a href="http://www.miitbeian.gov.cn/" rel="external nofollow">滇ICP备16008406号</a>
+      	</div>
+    </div>
+  </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa3b6b381538f5a8dc7f2901c79ffc58";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</footer>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/K3/" style="font-size: 12.86px;">K3</a> <a href="/tags/Linux/" style="font-size: 12.14px;">Linux</a> <a href="/tags/QQ/" style="font-size: 12.86px;">QQ</a> <a href="/tags/linux/" style="font-size: 10.71px;">linux</a> <a href="/tags/lua脚本/" style="font-size: 12.14px;">lua脚本</a> <a href="/tags/shadowsocks/" style="font-size: 10.71px;">shadowsocks</a> <a href="/tags/vps/" style="font-size: 10px;">vps</a> <a href="/tags/仙境传说/" style="font-size: 14.29px;">仙境传说</a> <a href="/tags/优文/" style="font-size: 11.43px;">优文</a> <a href="/tags/原创/" style="font-size: 18.57px;">原创</a> <a href="/tags/国外/" style="font-size: 11.43px;">国外</a> <a href="/tags/奇闻/" style="font-size: 14.29px;">奇闻</a> <a href="/tags/学校/" style="font-size: 15.71px;">学校</a> <a href="/tags/幽默/" style="font-size: 12.86px;">幽默</a> <a href="/tags/教程/" style="font-size: 11.43px;">教程</a> <a href="/tags/数学/" style="font-size: 11.43px;">数学</a> <a href="/tags/文摘/" style="font-size: 13.57px;">文摘</a> <a href="/tags/日记/" style="font-size: 17.14px;">日记</a> <a href="/tags/有声小说/" style="font-size: 14.29px;">有声小说</a> <a href="/tags/服务端/" style="font-size: 19.29px;">服务端</a> <a href="/tags/杂谈/" style="font-size: 12.86px;">杂谈</a> <a href="/tags/游戏/" style="font-size: 15.71px;">游戏</a> <a href="/tags/源代码/" style="font-size: 11.43px;">源代码</a> <a href="/tags/石器时代/" style="font-size: 20px;">石器时代</a> <a href="/tags/破解/" style="font-size: 17.86px;">破解</a> <a href="/tags/社会/" style="font-size: 12.86px;">社会</a> <a href="/tags/空间/" style="font-size: 12.14px;">空间</a> <a href="/tags/站务/" style="font-size: 17.14px;">站务</a> <a href="/tags/翻墙/" style="font-size: 11.43px;">翻墙</a> <a href="/tags/资源/" style="font-size: 13.57px;">资源</a> <a href="/tags/转载/" style="font-size: 16.43px;">转载</a> <a href="/tags/软件/" style="font-size: 18.57px;">软件</a> <a href="/tags/青雪故事/" style="font-size: 15px;">青雪故事</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Jerry，&lt;br&gt;生于云南，就职于农资企业&lt;br&gt;&lt;br&gt;热爱自由，&lt;br/&gt;以前曾喜欢asm，现在没玩了， &lt;br/&gt;目前是一枚打杂的&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

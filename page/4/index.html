@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://jerryshi.com">
+  <title>施振宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="施振宇的博客">
+<meta property="og:url" content="http://jerryshi.com/page/4/index.html">
+<meta property="og:site_name" content="施振宇的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="施振宇的博客">
+  
+    <link rel="alternative" href="/atom.xml" title="施振宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jerry Shi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">技术&amp;生活</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/demos">Demos</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Jerry Shi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jerry Shi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">技术&amp;生活</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/demos">Demos</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        
+  
+    <article id="post-51-muc-hongwai-jiema" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/07/19/51-muc-hongwai-jiema/">51单片机红外解码程序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>单片机型号：AT89S52</p>
+<p>红外接收模块：HX1838</p>
+<p>红外编码模块：HT6222</p>
+<p>程序作者：szy0syz<br>本程序将HT62222发送的波形用HX13838接收，再使用单片机软解码并将结果显示在8个数码段上。<br>显示内容包括：用户编码8bit<em>2，按键编码bit</em>2</p>
+</blockquote>
+<p>算法：通过延迟检测宽窄正脉冲，直接跳过负脉冲，和网上流传那个即卡上升沿又卡下降沿的算法精简了许多。<br>关于如何设置延迟请用示波器检测波形。<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2010/07/19/51-muc-hongwai-jiema/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/07/19/51-muc-hongwai-jiema/" class="archive-article-date">
+  	<time datetime="2010-07-19T06:16:47.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-07-19</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-discuss-university" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/07/discuss-university/">优文推荐：漫谈二流大学</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是我到浙大写的第一篇文章， 我在2005年就在清华，带着浙大校友、我的博士生钟瑞军为浙大成为世界一流商学重地，做了一大堆纸上谈兵的工作。我们两个傻瓜，没昼没夜没报酬的为浙大写了大量没人看的报告。后来想想，真有点像孙文上书李鸿章，孙文不傻，李鸿章不笨，只是这个国家病了，患的是百年慢性农民综合症(chronic peasant syndrome ) 。一百五十年来，个个国家领导人，都满怀雄心壮志的为这个国家鞠躬尽瘁，慈禧死了、溥仪退了、孙文让了，袁世凯中风了，蒋介石在小岛上抑郁了、毛泽东弄得自己妻离子散了，我们中华农业大帝国依然是有浓浓的土味，污秽中带着虚假，狂妄中带着自卑。</p>
+<p>我不后悔我选的人生道路，我在这孤独蜿蜒的人生路程上，慢慢的找到了意义。发现人生含义的人有福了，因为他没有白活。人生在世，最重要的意义，就是没有白活。下面这篇文章，是我在浙大漫漫路程的第一步。在世界走入商业社会、知识经济的今天，这个国家、这块土地、这个生命，不是任何一个人，任何一个党的，是属于所有居住在这块土地上的人民的，是在法律的界定下、智慧的衍生上，属于我们自己的。</p>
+<p>李志文</p>
+<p>2010年2月1日</p>
+<p><span style="color: #2f4f4f;"><span style="color: #222222;">
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2010/06/07/discuss-university/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/06/07/discuss-university/" class="archive-article-date">
+  	<time datetime="2010-06-07T05:38:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-06-07</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/优文/">优文</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-about-sa-szy0syz" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/22/about-sa-szy0syz/">说说石器时代私服</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div><br><div><br><div><br><br>从2009年知道石器时代服务端到现在也有一段时间了，其中也了解了一些东西。<br><br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2010/05/22/about-sa-szy0syz/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/22/about-sa-szy0syz/" class="archive-article-date">
+  	<time datetime="2010-05-22T13:51:28.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-22</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂谈/">杂谈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/石器时代/">石器时代</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-before-taojapan" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/22/before-taojapan/">写在“淘日本”之前</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目前宅文化风靡世界，随之淘宝也和雅虎日本达成合作伙伴，将在六月一日推出“<a href="http://www.taojapan.com" target="_blank" rel="external">淘日本</a>” 。</p>
+<p>日前曾有美国议会官员在Facebook上批评日本动漫，随之被众多日本网民留言围观之，最后美国议会官员再其Facebook为此举道歉。不得不说近几年日本文化对中国大陆的影响，越来越多网民用日本动漫武装自己，以至于很少参与社交活动或于人交流。若像日本某宅男从读高中到30岁之间都从不出门宅着，之后其父断网后杀全家，这也是一种极端（<a href="http://news.sohu.com/20100419/n271592469.shtml" target="_blank" rel="external">新闻来源</a>），对社会也有影响。</p>
+<p>而淘宝推出淘日本也就是瞄准了宅男女们，拉动国民的消费力嘛。我也刚从日本买了一个cospa的杯子，觉得监狱兔还不错，支持一下作者。对于马云，我有信心相信他把能“<a href="http://www.taojapan.com" target="_blank" rel="external">淘日本</a>”做的很好，期待网络的秋叶原。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/22/before-taojapan/" class="archive-article-date">
+  	<time datetime="2010-05-22T13:13:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-22</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-s7-200-20-hh-szy0syz" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/18/s7-200-20-hh-szy0syz/">西门子S7-200 PLC 仿真软件[汉化中文版]</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近开了一门关于PLC编程的课，由于不可能都有时间去实验室，所以就找了一个非常不错的仿真软件。</p>
+<p>起初软件是老师给的，且是英文版，且每次打开软件还是输入一个规定好的密码，实在烦人。所以我就将其汉化，又把每次都要输入密码这个提示去掉了。</p>
+<p>软件版本是S7_200_2.0，已经支持Microwin V3、V4 。</p>
+<p>另外，如果汉化的地方有问题，请留言指正。 ……</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2010/05/18/s7-200-20-hh-szy0syz/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/18/s7-200-20-hh-szy0syz/" class="archive-article-date">
+  	<time datetime="2010-05-18T13:09:55.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-18</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原创/">原创</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hanhan-articles-2010" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/18/hanhan-articles-2010/">优文推荐：韩寒2010被删文章全集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div><br>&gt; 快来吧，快走吧<br>&gt; 而你们在怕什么<br>&gt; 十块钱更实在<br>&gt; 把魔术演成话剧<br>&gt; 你是小明吗<br>&gt; 中国官员必修课之第一讲《兰州悲剧》<br>&gt; 从今天起，做一个低俗的人<br>&gt; 我只是在猜想<br>&gt; 孩子们，你们扫了爷爷的兴<br>下载地址：<a href="/wp/rar/hanhan-article-2010.rar">点我</a><br><br></div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/18/hanhan-articles-2010/" class="archive-article-date">
+  	<time datetime="2010-05-18T06:03:28.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-18</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/优文/">优文</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-av-king-boy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/18/av-king-boy/">优文推荐：假如男不看A片，女不看言情</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我大学时有个同学，号称A片之王。不仅自己看，还在校园网设了个FTP叫“每日一毛”，也即每天发布新的毛片，一炮而红，成为校园中的红人。一般来说，毛片看到这种程度的，大多宅到不行。我同学也不例外。而且他不仅宅，至今根本没有碰过女人。照例来说，像这样虎狼年华的饥渴猥琐单身男青，按照大家的想象，应该是留着哈喇子的人中淫魔。但事实是，这位朋友外表斯斯文文，眼镜一架，一脸青年学者气息。现在的女孩子都主动的很，可这位老兄颇得柳下惠真传，老僧入定，心似枯骨。问到何以至此，他总是淡然一笑“看多了，也就那么回事。”</p>
+<p>我在想，A片，又害了一位正常的男青年。当年没有A片可看的岁月里，男生们满脑邪念充盈；和女孩子多说两句话，大脑就自动调到成人频道。可是在这个网络色情泛滥的当今，曾经的淫男们离开了电脑，居然对生活中的女人没了想法，甚至没了性欲，这不能不成为信息时代人类异化的经典案例。 ……</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2010/05/18/av-king-boy/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/18/av-king-boy/" class="archive-article-date">
+  	<time datetime="2010-05-18T04:13:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-18</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/优文/">优文</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/社会/">社会</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-new-technology-game-grop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/17/new-technology-game-grop/">新技术：虚拟的运动感应</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>日本游戏公司teatime正在开发的Galgame新游戏Mousousei Kasou Jinkaku Shougai(中文译名 妄想性仮想人格障害)将提供对普通摄像头的支持(名为Eroge Technology Advances 高级工口技术)，通过摄像头对玩家动作的捕捉(虽然捕捉到动作都比较糟糕，但在技术上还是值得肯定)，可以让玩家通过肢体语言控制游戏角色，做出各种动作，实现效果同微软的Natal类似。</p>
+<p>通过摄像头的捕捉，你可以对虚拟女孩进行例如脱衣服、撩裙子的动作。<span style="color: #ff6600;">你是不是还在还念小时候撩起姐姐裙子还等姐姐弯下腰给你糖吃的感觉，你当年诡异的笑容里掩盖不了你暗爽到内伤的淫荡 。</span>这个游戏再次证明小日本的宅技术的无比强大。另外补充一句，我不知道这个游戏会在本月28日上市，我也不该知道3DM是什么。  ……</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2010/05/17/new-technology-game-grop/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/17/new-technology-game-grop/" class="archive-article-date">
+  	<time datetime="2010-05-17T05:06:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏/">游戏</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-free-domain-registered" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/13/free-domain-registered/">最新免费注册com国际域名</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>免费注册COM域名： <a href="http://order.1and1.com/" target="_blank" rel="external">http://order.1and1.com/</a></p>
+<p>想要免费com域名的抓紧时间吧。</p>
+<p>消息时间：2010.05.13<br>消息来源：puff1984 @ <a href="http://twitter.com/" target="_blank" rel="external">TWITTER</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/13/free-domain-registered/" class="archive-article-date">
+  	<time datetime="2010-05-13T04:48:31.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-13</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-new-blog-domain" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/05/12/new-blog-domain/">博客换了新的域名</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>新域名地址为： <a href="http://www.szy0syz.com" target="_blank" rel="external">www.szy0syz.com</a>  、 <a href="http://szy0syz.com" target="_blank" rel="external">szy0syz.com</a></p>
+<p>当然老的地址还是可以用，但还是请大家收藏新地址。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/05/12/new-blog-domain/" class="archive-article-date">
+  	<time datetime="2010-05-12T14:55:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-05-12</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/站务/">站务</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/生活/">生活</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jerry Shi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten | <a href="http://www.miitbeian.gov.cn/" rel="external nofollow">滇ICP备16008406号</a>
+      	</div>
+    </div>
+  </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa3b6b381538f5a8dc7f2901c79ffc58";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</footer>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/K3/" style="font-size: 12.86px;">K3</a> <a href="/tags/Linux/" style="font-size: 12.14px;">Linux</a> <a href="/tags/QQ/" style="font-size: 12.86px;">QQ</a> <a href="/tags/linux/" style="font-size: 10.71px;">linux</a> <a href="/tags/lua脚本/" style="font-size: 12.14px;">lua脚本</a> <a href="/tags/shadowsocks/" style="font-size: 10.71px;">shadowsocks</a> <a href="/tags/vps/" style="font-size: 10px;">vps</a> <a href="/tags/仙境传说/" style="font-size: 14.29px;">仙境传说</a> <a href="/tags/优文/" style="font-size: 11.43px;">优文</a> <a href="/tags/原创/" style="font-size: 18.57px;">原创</a> <a href="/tags/国外/" style="font-size: 11.43px;">国外</a> <a href="/tags/奇闻/" style="font-size: 14.29px;">奇闻</a> <a href="/tags/学校/" style="font-size: 15.71px;">学校</a> <a href="/tags/幽默/" style="font-size: 12.86px;">幽默</a> <a href="/tags/教程/" style="font-size: 11.43px;">教程</a> <a href="/tags/数学/" style="font-size: 11.43px;">数学</a> <a href="/tags/文摘/" style="font-size: 13.57px;">文摘</a> <a href="/tags/日记/" style="font-size: 17.14px;">日记</a> <a href="/tags/有声小说/" style="font-size: 14.29px;">有声小说</a> <a href="/tags/服务端/" style="font-size: 19.29px;">服务端</a> <a href="/tags/杂谈/" style="font-size: 12.86px;">杂谈</a> <a href="/tags/游戏/" style="font-size: 15.71px;">游戏</a> <a href="/tags/源代码/" style="font-size: 11.43px;">源代码</a> <a href="/tags/石器时代/" style="font-size: 20px;">石器时代</a> <a href="/tags/破解/" style="font-size: 17.86px;">破解</a> <a href="/tags/社会/" style="font-size: 12.86px;">社会</a> <a href="/tags/空间/" style="font-size: 12.14px;">空间</a> <a href="/tags/站务/" style="font-size: 17.14px;">站务</a> <a href="/tags/翻墙/" style="font-size: 11.43px;">翻墙</a> <a href="/tags/资源/" style="font-size: 13.57px;">资源</a> <a href="/tags/转载/" style="font-size: 16.43px;">转载</a> <a href="/tags/软件/" style="font-size: 18.57px;">软件</a> <a href="/tags/青雪故事/" style="font-size: 15px;">青雪故事</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Jerry，&lt;br&gt;生于云南，就职于农资企业&lt;br&gt;&lt;br&gt;热爱自由，&lt;br/&gt;以前曾喜欢asm，现在没玩了， &lt;br/&gt;目前是一枚打杂的&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

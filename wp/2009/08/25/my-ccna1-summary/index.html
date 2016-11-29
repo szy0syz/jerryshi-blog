@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://jerryshi.com">
+  <title>思科网络学院教程CCNA1学习小结 | 施振宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个月前买了《思科网络技术学院》的教材，由于暑假在家，看得比较慢(今天去这，明天有人来)~直到最近几天才看完第一学期(CCNA1)。最郁闷的事情就是，买书钱还听说CCNA报名费是125美元，等书买了，看完第一章，竟然看到报名费暴涨到325美元。早知道就不弄CCNA了...囧...
+
+书写得非常详细，不愧是官方出的。如讲某个基础，咱先从原子核开始讲。真是不得不说书之精细。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="思科网络学院教程CCNA1学习小结">
+<meta property="og:url" content="http://jerryshi.com/2009/08/25/my-ccna1-summary/index.html">
+<meta property="og:site_name" content="施振宇的博客">
+<meta property="og:description" content="一个月前买了《思科网络技术学院》的教材，由于暑假在家，看得比较慢(今天去这，明天有人来)~直到最近几天才看完第一学期(CCNA1)。最郁闷的事情就是，买书钱还听说CCNA报名费是125美元，等书买了，看完第一章，竟然看到报名费暴涨到325美元。早知道就不弄CCNA了...囧...
+
+书写得非常详细，不愧是官方出的。如讲某个基础，咱先从原子核开始讲。真是不得不说书之精细。">
+<meta property="og:updated_time" content="2016-11-25T06:15:38.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="思科网络学院教程CCNA1学习小结">
+<meta name="twitter:description" content="一个月前买了《思科网络技术学院》的教材，由于暑假在家，看得比较慢(今天去这，明天有人来)~直到最近几天才看完第一学期(CCNA1)。最郁闷的事情就是，买书钱还听说CCNA报名费是125美元，等书买了，看完第一章，竟然看到报名费暴涨到325美元。早知道就不弄CCNA了...囧...
+
+书写得非常详细，不愧是官方出的。如讲某个基础，咱先从原子核开始讲。真是不得不说书之精细。">
+  
+    <link rel="alternative" href="/atom.xml" title="施振宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jerry Shi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">技术&amp;生活</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/demos">Demos</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Jerry Shi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jerry Shi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">技术&amp;生活</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/demos">Demos</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-my-ccna1-summary" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      思科网络学院教程CCNA1学习小结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>一个月前买了《思科网络技术学院》的教材，由于暑假在家，看得比较慢(今天去这，明天有人来)~直到最近几天才看完第一学期(CCNA1)。最郁闷的事情就是，买书钱还听说CCNA报名费是125美元，等书买了，看完第一章，竟然看到报名费暴涨到325美元。早知道就不弄CCNA了...囧...
+
+书写得非常详细，不愧是官方出的。如讲某个基础，咱先从原子核开始讲。真是不得不说书之精细。
+</code></pre><a id="more"></a>
+<pre><code>看是看了，然还是有部分看不懂的，所以写个小结，好帮助巩固，等待下次再过一遍。
+
+第一章：网络技术入门
+作为书的第一章，讲得非常基础，大体的介绍了因特网的基本知识。如NIC，PCB，web浏览器，IP地址和网络掩码的知识。
+在这章终于知道了ping命令是啥意思~(packet Internet groper)，以前会用，具体什么意思和原理还真不知道。
+
+第二章：网络技术基础
+本章先介绍了一些网络专业术语和各种计算机网络。着重的从理论方面介绍了OSI网络参考模型，但也只是概念性的介绍了这7层。此外还介绍了TCP/IP模型和网络数据封装和解封装的过程。
+
+第三章：网络介质
+本章非常牛X，我说的介绍原子结构就是这样，不仅介绍原子结构还贴了一张元素周期表出来呢。
+本章主要介绍了如何理解OSI参考模型物理层的基础。...
+
+第四章：线缆测试
+
+第五章：局域网和广域网布线
+
+第六章：以太网基础
+
+第七章：以太网技术
+
+第八章：以太网交换
+
+第九章：TCP/IP协议集与IP寻址
+
+第十章：路由选择基础与子网
+
+第十一章：TCP/IP传输层与应用层
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2009/08/25/my-ccna1-summary/" class="archive-article-date">
+  	<time datetime="2009-08-25T08:43:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2009-08-25</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2009/08/26/ccna1-rip/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          由CCNA1初探路由信息协议(RIP)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2009/08/24/sa-smo-source-code/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">石器时代服务端(SMO)源代码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="my-ccna1-summary" data-title="思科网络学院教程CCNA1学习小结" data-url="http://jerryshi.com/2009/08/25/my-ccna1-summary/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"szy0syz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jerry Shi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten | <a href="http://www.miitbeian.gov.cn/" rel="external nofollow">滇ICP备16008406号</a>
+      	</div>
+    </div>
+  </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa3b6b381538f5a8dc7f2901c79ffc58";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</footer>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/K3/" style="font-size: 12.86px;">K3</a> <a href="/tags/Linux/" style="font-size: 12.14px;">Linux</a> <a href="/tags/QQ/" style="font-size: 12.86px;">QQ</a> <a href="/tags/linux/" style="font-size: 10.71px;">linux</a> <a href="/tags/lua脚本/" style="font-size: 12.14px;">lua脚本</a> <a href="/tags/shadowsocks/" style="font-size: 10.71px;">shadowsocks</a> <a href="/tags/vps/" style="font-size: 10px;">vps</a> <a href="/tags/仙境传说/" style="font-size: 14.29px;">仙境传说</a> <a href="/tags/优文/" style="font-size: 11.43px;">优文</a> <a href="/tags/原创/" style="font-size: 18.57px;">原创</a> <a href="/tags/国外/" style="font-size: 11.43px;">国外</a> <a href="/tags/奇闻/" style="font-size: 14.29px;">奇闻</a> <a href="/tags/学校/" style="font-size: 15.71px;">学校</a> <a href="/tags/幽默/" style="font-size: 12.86px;">幽默</a> <a href="/tags/教程/" style="font-size: 11.43px;">教程</a> <a href="/tags/数学/" style="font-size: 11.43px;">数学</a> <a href="/tags/文摘/" style="font-size: 13.57px;">文摘</a> <a href="/tags/日记/" style="font-size: 17.14px;">日记</a> <a href="/tags/有声小说/" style="font-size: 14.29px;">有声小说</a> <a href="/tags/服务端/" style="font-size: 19.29px;">服务端</a> <a href="/tags/杂谈/" style="font-size: 12.86px;">杂谈</a> <a href="/tags/游戏/" style="font-size: 15.71px;">游戏</a> <a href="/tags/源代码/" style="font-size: 11.43px;">源代码</a> <a href="/tags/石器时代/" style="font-size: 20px;">石器时代</a> <a href="/tags/破解/" style="font-size: 17.86px;">破解</a> <a href="/tags/社会/" style="font-size: 12.86px;">社会</a> <a href="/tags/空间/" style="font-size: 12.14px;">空间</a> <a href="/tags/站务/" style="font-size: 17.14px;">站务</a> <a href="/tags/翻墙/" style="font-size: 11.43px;">翻墙</a> <a href="/tags/资源/" style="font-size: 13.57px;">资源</a> <a href="/tags/转载/" style="font-size: 16.43px;">转载</a> <a href="/tags/软件/" style="font-size: 18.57px;">软件</a> <a href="/tags/青雪故事/" style="font-size: 15px;">青雪故事</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Jerry，&lt;br&gt;生于云南，就职于农资企业&lt;br&gt;&lt;br&gt;热爱自由，&lt;br/&gt;以前曾喜欢asm，现在没玩了， &lt;br/&gt;目前是一枚打杂的&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

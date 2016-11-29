@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://jerryshi.com">
+  <title>51单片机测量方波脉冲信号周期 | 施振宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本程序将通过INT1外部中断检测信号，出现方波测出周期并以十六进制方式显示在数码段上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51单片机测量方波脉冲信号周期">
+<meta property="og:url" content="http://jerryshi.com/2010/07/19/51mcu-clfbzq/index.html">
+<meta property="og:site_name" content="施振宇的博客">
+<meta property="og:description" content="本程序将通过INT1外部中断检测信号，出现方波测出周期并以十六进制方式显示在数码段上。">
+<meta property="og:updated_time" content="2016-11-25T06:15:20.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="51单片机测量方波脉冲信号周期">
+<meta name="twitter:description" content="本程序将通过INT1外部中断检测信号，出现方波测出周期并以十六进制方式显示在数码段上。">
+  
+    <link rel="alternative" href="/atom.xml" title="施振宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jerry Shi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">技术&amp;生活</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/demos">Demos</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Jerry Shi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jerry Shi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">技术&amp;生活</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/demos">Demos</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-51mcu-clfbzq" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      51单片机测量方波脉冲信号周期
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本程序将通过INT1外部中断检测信号，出现方波测出周期并以十六进制方式显示在数码段上。<br><a id="more"></a><br>程序代码如下：</p>
+<pre class="brush:c++">
+////////////////////////////////////////////
+//程序名：51单片机INT1测量脉冲信号周期
+//作者：szy0syz
+//时间：2010.7.19  
+/////////////////////////////////////////////
+#include<reg52.h> 
+unsigned char const dofly[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+//显示以十六进制显示在LED上
+int temp,i;
+sbit PP=P3^3;
+
+void delay(unsigned int cnt)
+{
+ while(--cnt);
+}
+
+void display()
+{
+ for(i=0;i<100;i++) 1="" 2="" {="" temp="TH1/16;" 高十位="" p0="dofly[temp];" p2="0;" delay(300);="" 高个位="" 低个位="" 低十位="" }="" *------------------------------------------------="" 主程序="" ------------------------------------------------*="" main()="" tmod="" |="0x10;//开T1的门控位，选择T1工作模式位01(16bit)" ea="1;" 全局中断开="" ex1="1;" 外部中断1开="" it1="1;" 边沿触发，it1="0表示电平触发" tr1="0;" t1定时器关闭="" et0="0;" 定时器0中断打开="" tr0="0;" 定时器0开关打开="" th0="0xec;" 给定初值，这里使用定时器最大值从0开始计数一直到65535溢出="" tl0="0x77;" 中断定时为1ms="" tl1="0;" th1="0;" while(1)="" ;="" 外部中断程序="" void="" isr_key(void)="" interrupt="" using="" delay(20);="" if(pp="=0)" if(tr1="=0)" display();="" timer0_isr(void)="" pp="~PP;" <="" pre=""></100;i++)></reg52.h></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/07/19/51mcu-clfbzq/" class="archive-article-date">
+  	<time datetime="2010-07-19T11:49:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-07-19</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2010/07/21/jiaqi-shiyanshi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          假期里要待的实验室
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2010/07/19/51-muc-hongwai-jiema/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">51单片机红外解码程序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="51mcu-clfbzq" data-title="51单片机测量方波脉冲信号周期" data-url="http://jerryshi.com/2010/07/19/51mcu-clfbzq/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"szy0syz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jerry Shi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten | <a href="http://www.miitbeian.gov.cn/" rel="external nofollow">滇ICP备16008406号</a>
+      	</div>
+    </div>
+  </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa3b6b381538f5a8dc7f2901c79ffc58";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</footer>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/K3/" style="font-size: 12.86px;">K3</a> <a href="/tags/Linux/" style="font-size: 12.14px;">Linux</a> <a href="/tags/QQ/" style="font-size: 12.86px;">QQ</a> <a href="/tags/linux/" style="font-size: 10.71px;">linux</a> <a href="/tags/lua脚本/" style="font-size: 12.14px;">lua脚本</a> <a href="/tags/shadowsocks/" style="font-size: 10.71px;">shadowsocks</a> <a href="/tags/vps/" style="font-size: 10px;">vps</a> <a href="/tags/仙境传说/" style="font-size: 14.29px;">仙境传说</a> <a href="/tags/优文/" style="font-size: 11.43px;">优文</a> <a href="/tags/原创/" style="font-size: 18.57px;">原创</a> <a href="/tags/国外/" style="font-size: 11.43px;">国外</a> <a href="/tags/奇闻/" style="font-size: 14.29px;">奇闻</a> <a href="/tags/学校/" style="font-size: 15.71px;">学校</a> <a href="/tags/幽默/" style="font-size: 12.86px;">幽默</a> <a href="/tags/教程/" style="font-size: 11.43px;">教程</a> <a href="/tags/数学/" style="font-size: 11.43px;">数学</a> <a href="/tags/文摘/" style="font-size: 13.57px;">文摘</a> <a href="/tags/日记/" style="font-size: 17.14px;">日记</a> <a href="/tags/有声小说/" style="font-size: 14.29px;">有声小说</a> <a href="/tags/服务端/" style="font-size: 19.29px;">服务端</a> <a href="/tags/杂谈/" style="font-size: 12.86px;">杂谈</a> <a href="/tags/游戏/" style="font-size: 15.71px;">游戏</a> <a href="/tags/源代码/" style="font-size: 11.43px;">源代码</a> <a href="/tags/石器时代/" style="font-size: 20px;">石器时代</a> <a href="/tags/破解/" style="font-size: 17.86px;">破解</a> <a href="/tags/社会/" style="font-size: 12.86px;">社会</a> <a href="/tags/空间/" style="font-size: 12.14px;">空间</a> <a href="/tags/站务/" style="font-size: 17.14px;">站务</a> <a href="/tags/翻墙/" style="font-size: 11.43px;">翻墙</a> <a href="/tags/资源/" style="font-size: 13.57px;">资源</a> <a href="/tags/转载/" style="font-size: 16.43px;">转载</a> <a href="/tags/软件/" style="font-size: 18.57px;">软件</a> <a href="/tags/青雪故事/" style="font-size: 15px;">青雪故事</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Jerry，&lt;br&gt;生于云南，就职于农资企业&lt;br&gt;&lt;br&gt;热爱自由，&lt;br/&gt;以前曾喜欢asm，现在没玩了， &lt;br/&gt;目前是一枚打杂的&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

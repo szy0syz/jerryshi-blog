@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://jerryshi.com">
+  <title>简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等) | 施振宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Pidgin（前称Gaim）是一个跨平台的即时通信客户端，使用GNU通用公共许可证发布。这款软件支持多个现时常用的即时通信协议，让用户可以用同一个软件登录不同的即时通信服务。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等)">
+<meta property="og:url" content="http://jerryshi.com/2010/04/06/pidgin-qq-msn/index.html">
+<meta property="og:site_name" content="施振宇的博客">
+<meta property="og:description" content="Pidgin（前称Gaim）是一个跨平台的即时通信客户端，使用GNU通用公共许可证发布。这款软件支持多个现时常用的即时通信协议，让用户可以用同一个软件登录不同的即时通信服务。">
+<meta property="og:image" content="http://jerryshi.com/wp/img/2010/04/Pidgin.jpg">
+<meta property="og:updated_time" content="2016-11-25T06:15:40.977Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等)">
+<meta name="twitter:description" content="Pidgin（前称Gaim）是一个跨平台的即时通信客户端，使用GNU通用公共许可证发布。这款软件支持多个现时常用的即时通信协议，让用户可以用同一个软件登录不同的即时通信服务。">
+<meta name="twitter:image" content="http://jerryshi.com/wp/img/2010/04/Pidgin.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="施振宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Jerry Shi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">技术&amp;生活</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/demos">Demos</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Jerry Shi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Jerry Shi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">技术&amp;生活</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/demos">Demos</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/szy0syz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/szy0syz" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/szy0syz" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-pidgin-qq-msn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Pidgin</strong>（前称<strong>Gaim</strong>）是一个跨平台的即时通信客户端，使用GNU通用公共许可证发布。这款软件支持多个现时常用的即时通信协议，让用户可以用同一个软件登录不同的即时通信服务。</p>
+<a id="more"></a>
+<p>[caption id=”attachment_1290” align=”alignnone” width=”270” caption=”Pidgin”]<a href="/wp/img/2010/04/Pidgin.jpg"><img src="/wp/img/2010/04/Pidgin.jpg" alt="" title="Pidgin"></a>[/caption]</p>
+<p>Pidgin支持多个<a href="http://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" title="操作系统" target="_blank" rel="external">操作系统</a>，包括<a href="http://zh.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows" target="_blank" rel="external">Windows</a>和其他<a href="http://zh.wikipedia.org/wiki/%E9%A1%9EUnix%E7%B3%BB%E7%B5%B1" title="类Unix系统" target="_blank" rel="external">类Unix系统</a>，例如<a href="http://zh.wikipedia.org/wiki/Linux" title="Linux" target="_blank" rel="external">Linux</a>、<a href="http://zh.wikipedia.org/wiki/BSD" title="BSD" target="_blank" rel="external">BSD</a>和<a href="http://zh.wikipedia.org/w/index.php?title=AmigaOS&amp;action=edit&amp;redlink=1" title="AmigaOS（尚未撰写）" target="_blank" rel="external">AmigaOS</a>。软件本身支持<a href="http://zh.wikipedia.org/w/index.php?title=NSS&amp;action=edit&amp;redlink=1" title="NSS（尚未撰写）" target="_blank" rel="external">NSS</a>，为支持客户端和服务器之间加密通信的协议提供基础。除此之外，用户可以安装<a href="http://zh.wikipedia.org/wiki/%E6%8F%92%E4%BB%B6" title="插件" target="_blank" rel="external">插件</a>来得到更多功能。</p>
+<p>Pidgin包含了一般即时通信软件的功能，例如标签页聊天窗口、联络人名单、文件传输、聊天记录的功能。</p>
+<p>用户可以选择是否打开标签页聊天窗口功能，聊天窗口也提供按钮给用户修改消息的格式，例如变成粗体或者把文字改变为橙色。</p>
+<p>用户可以在“Buddy List”添加联络人（在Pidgin里叫“Buddy”）或者其他IRC频道。使用多个协议的联络人可以被归入同一个联络人处理，用户更可以为他们设置昵称。</p>
+<p>用户可以通过“Buddy Pounces”，使Pidgin在某些特定的条件进行预先设置好的操作，例如“在朋友Chris Wong上线时向他发送‘你好！’。</p>
+<h3 id="协议支持"><a href="#协议支持" class="headerlink" title="协议支持"></a>协议支持</h3><blockquote>
+<h4 id="官方开发"><a href="#官方开发" class="headerlink" title="官方开发:"></a>官方开发:</h4><ul>
+<li><a href="http://zh.wikipedia.org/wiki/.NET_Messenger_Service" title=".NET Messenger Service" target="_blank" rel="external">.NET Messenger Service</a>（<a href="http://zh.wikipedia.org/wiki/Windows_Live_Messenger" title="Windows Live Messenger" target="_blank" rel="external">Windows Live Messenger</a>、<a href="http://zh.wikipedia.org/wiki/MSN_Messenger" title="MSN Messenger" target="_blank" rel="external">MSN Messenger</a>）</li>
+<li><a href="http://zh.wikipedia.org/wiki/Bonjour" title="Bonjour" target="_blank" rel="external">Bonjour</a>（苹果公司的<a href="http://zh.wikipedia.org/w/index.php?title=Zeroconf&amp;action=edit&amp;redlink=1" title="Zeroconf（尚未撰写）" target="_blank" rel="external">Zeroconf</a>）</li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Gadu-Gadu&amp;action=edit&amp;redlink=1" title="Gadu-Gadu（尚未撰写）" target="_blank" rel="external">Gadu-Gadu</a></li>
+<li><a href="http://zh.wikipedia.org/wiki/IRC" title="IRC" target="_blank" rel="external">Internet Relay Chat</a></li>
+<li><p><a href="http://zh.wikipedia.org/wiki/Jabber" title="Jabber" target="_blank" rel="external">Jabber</a>／<a href="http://zh.wikipedia.org/wiki/XMPP" title="XMPP" target="_blank" rel="external">XMPP</a><br><dl> <dd></dd></dl></p>
+</li>
+<li><p><a href="http://zh.wikipedia.org/wiki/Google_Talk" title="Google Talk" target="_blank" rel="external">Google Talk</a><br> </p>
+</li>
+<li><p><a href="http://zh.wikipedia.org/w/index.php?title=MySpaceIM&amp;action=edit&amp;redlink=1" title="MySpaceIM（尚未撰写）" target="_blank" rel="external">MySpaceIM</a></p>
+</li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Novell_GroupWise&amp;action=edit&amp;redlink=1" title="Novell GroupWise（尚未撰写）" target="_blank" rel="external">Novell GroupWise</a></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=OSCAR&amp;action=edit&amp;redlink=1" title="OSCAR（尚未撰写）" target="_blank" rel="external">OSCAR</a>（<a href="http://zh.wikipedia.org/wiki/AOL%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A" title="AOL即时通信" target="_blank" rel="external">AIM</a>、<a href="http://zh.wikipedia.org/wiki/ICQ" title="ICQ" target="_blank" rel="external">ICQ</a>、<a href="http://zh.wikipedia.org/wiki/.Mac" title=".Mac" target="_blank" rel="external">.Mac</a>）</li>
+<li><a href="http://zh.wikipedia.org/wiki/%E9%A8%B0%E8%A8%8AQQ" title="腾讯QQ" target="_blank" rel="external">QQ</a>（之前通过第三方开发的<a href="http://openq.sourceforge.net/" target="_blank" rel="external">OpenQ</a>支持）</li>
+<li><a href="http://zh.wikipedia.org/wiki/Lotus_Sametime" title="Lotus Sametime" target="_blank" rel="external">Sametime</a></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=SILC&amp;action=edit&amp;redlink=1" title="SILC（尚未撰写）" target="_blank" rel="external">SILC</a></li>
+<li><a href="http://zh.wikipedia.org/wiki/Session_Initiation_Protocol" title="Session Initiation Protocol" target="_blank" rel="external">Session Initiation Protocol</a>（SIP）</li>
+<li><a href="http://zh.wikipedia.org/wiki/Yahoo!_Messenger" title="Yahoo! Messenger" target="_blank" rel="external">Yahoo! Messenger</a></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Zephyr&amp;action=edit&amp;redlink=1" title="Zephyr（尚未撰写）" target="_blank" rel="external">Zephyr</a></li>
+</ul>
+<h4 id="第三方开发"><a href="#第三方开发" class="headerlink" title="第三方开发"></a>第三方开发</h4><ul>
+<li><a href="http://zh.wikipedia.org/wiki/Facebook" title="Facebook" target="_blank" rel="external">Facebook Chat</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-6" target="_blank" rel="external">[7]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Internet_Citizen%27s_Band&amp;action=edit&amp;redlink=1" title="Internet Citizen" target="_blank" rel="external">Internet CB (ICB) Network</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-7" target="_blank" rel="external">[8]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/wiki/Napster" title="Napster" target="_blank" rel="external">Napster</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-8" target="_blank" rel="external">[9]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=NateOn&amp;action=edit&amp;redlink=1" title="NateOn（尚未撰写）" target="_blank" rel="external">NateOn</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-9" target="_blank" rel="external">[10]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Simple_Network_Paging_Protocol&amp;action=edit&amp;redlink=1" title="Simple Network Paging Protocol（尚未撰写）" target="_blank" rel="external">SNPP</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-10" target="_blank" rel="external">[11]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/wiki/Skype" title="Skype" target="_blank" rel="external">Skype</a></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Tlen&amp;action=edit&amp;redlink=1" title="Tlen（尚未撰写）" target="_blank" rel="external">Tlen</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-11" target="_blank" rel="external">[12]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/wiki/WinMX" title="WinMX" target="_blank" rel="external">WinMX</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-12" target="_blank" rel="external">[13]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/w/index.php?title=Xfire&amp;action=edit&amp;redlink=1" title="Xfire（尚未撰写）" target="_blank" rel="external">Xfire</a><sup><a href="http://zh.wikipedia.org/wiki/Pidgin#_note-13" target="_blank" rel="external">[14]</a></sup></li>
+<li><a href="http://zh.wikipedia.org/wiki/%E9%A3%9E%E4%BF%A1" title="飞信" target="_blank" rel="external">飞信</a><br><table cellspacing="3"><br><tbody><br><tr><br><th><span style="font-weight: normal;">官方网站：</span></th><br><td><a href="https://www.pidgin.im/" target="_blank" rel="external">www.pidgin.im</a></td><br></tr><br></tbody><br></table><br>消息来源：<a href="http://www.chinagfw.org/" target="_blank" rel="external">GFW BLOG</a> &amp; <a href="http://zh.wikipedia.org/wiki/%E9%A6%96%E9%A1%B5" target="_blank" rel="external">维基百科</a> （请自备小梯子）</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2010/04/06/pidgin-qq-msn/" class="archive-article-date">
+  	<time datetime="2010-04-06T04:54:08.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-04-06</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QQ/">QQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件/">软件</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/默认/">默认</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2010/05/12/new-blog-domain/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          博客换了新的域名
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2010/03/25/ccav-cosplay-xwlb/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CCAV和cosplay不得不看的一张图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="pidgin-qq-msn" data-title="简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等)" data-url="http://jerryshi.com/2010/04/06/pidgin-qq-msn/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"szy0syz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Jerry Shi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten | <a href="http://www.miitbeian.gov.cn/" rel="external nofollow">滇ICP备16008406号</a>
+      	</div>
+    </div>
+  </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa3b6b381538f5a8dc7f2901c79ffc58";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</footer>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/K3/" style="font-size: 12.86px;">K3</a> <a href="/tags/Linux/" style="font-size: 12.14px;">Linux</a> <a href="/tags/QQ/" style="font-size: 12.86px;">QQ</a> <a href="/tags/linux/" style="font-size: 10.71px;">linux</a> <a href="/tags/lua脚本/" style="font-size: 12.14px;">lua脚本</a> <a href="/tags/shadowsocks/" style="font-size: 10.71px;">shadowsocks</a> <a href="/tags/vps/" style="font-size: 10px;">vps</a> <a href="/tags/仙境传说/" style="font-size: 14.29px;">仙境传说</a> <a href="/tags/优文/" style="font-size: 11.43px;">优文</a> <a href="/tags/原创/" style="font-size: 18.57px;">原创</a> <a href="/tags/国外/" style="font-size: 11.43px;">国外</a> <a href="/tags/奇闻/" style="font-size: 14.29px;">奇闻</a> <a href="/tags/学校/" style="font-size: 15.71px;">学校</a> <a href="/tags/幽默/" style="font-size: 12.86px;">幽默</a> <a href="/tags/教程/" style="font-size: 11.43px;">教程</a> <a href="/tags/数学/" style="font-size: 11.43px;">数学</a> <a href="/tags/文摘/" style="font-size: 13.57px;">文摘</a> <a href="/tags/日记/" style="font-size: 17.14px;">日记</a> <a href="/tags/有声小说/" style="font-size: 14.29px;">有声小说</a> <a href="/tags/服务端/" style="font-size: 19.29px;">服务端</a> <a href="/tags/杂谈/" style="font-size: 12.86px;">杂谈</a> <a href="/tags/游戏/" style="font-size: 15.71px;">游戏</a> <a href="/tags/源代码/" style="font-size: 11.43px;">源代码</a> <a href="/tags/石器时代/" style="font-size: 20px;">石器时代</a> <a href="/tags/破解/" style="font-size: 17.86px;">破解</a> <a href="/tags/社会/" style="font-size: 12.86px;">社会</a> <a href="/tags/空间/" style="font-size: 12.14px;">空间</a> <a href="/tags/站务/" style="font-size: 17.14px;">站务</a> <a href="/tags/翻墙/" style="font-size: 11.43px;">翻墙</a> <a href="/tags/资源/" style="font-size: 13.57px;">资源</a> <a href="/tags/转载/" style="font-size: 16.43px;">转载</a> <a href="/tags/软件/" style="font-size: 18.57px;">软件</a> <a href="/tags/青雪故事/" style="font-size: 15px;">青雪故事</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">Jerry，&lt;br&gt;生于云南，就职于农资企业&lt;br&gt;&lt;br&gt;热爱自由，&lt;br/&gt;以前曾喜欢asm，现在没玩了， &lt;br/&gt;目前是一枚打杂的&lt;br/&gt;&lt;br/&gt;胆小认生，不易相处，&lt;br&gt;年轻无为，卖马为生。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
