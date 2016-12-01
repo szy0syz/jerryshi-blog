@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jerryshi.com/"/>
-  <updated>2016-11-29T08:19:08.128Z</updated>
+  <updated>2016-12-01T11:19:26.594Z</updated>
   <id>http://jerryshi.com/</id>
   
   <author>
@@ -16,14 +16,93 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>手动组建 Vue 脚手架实践</title>
+    <link href="http://jerryshi.com/2016/12/01/vue-cli-test/"/>
+    <id>http://jerryshi.com/2016/12/01/vue-cli-test/</id>
+    <published>2016-12-01T11:13:28.000Z</published>
+    <updated>2016-12-01T11:19:26.594Z</updated>
+    
+    <content type="html"><![CDATA[<p>据说Vue-cli脚手架（全家桶）很不错，但作为初学者的我还是先从基础看起，看看脚手架的具体组建，方便以后深入学习。那么我们就开始吧！</p>
+<h3 id="初始化git-repo"><a href="#初始化git-repo" class="headerlink" title="初始化git repo"></a>初始化git repo</h3><p>为了方便，我们还是新建一个repo（其实是为了以后复习代码）。我在github已经建好，名字叫：<code>vue-cli-test</code>。先cloone到本地：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/szy0syz/vue-cli-test.git vuecli</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="vue-cli项目结构"><a href="#vue-cli项目结构" class="headerlink" title="vue-cli项目结构"></a>vue-cli项目结构</h3><p>在创建之前，先看看vue-cli脚手架的项目最小化结构：</p>
+<blockquote>
+<pre><code>|-- index.html
+|-- main.js                入口文件
+|-- App.vue                vue文件，官方推荐命名法
+|-- package.json        工程文件(项目依赖、名称、配置)
+|-- webpack.config.js    webpack配置文件
+</code></pre></blockquote>
+<p>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app</span>&gt;</span><span class="tag">&lt;/<span class="name">app</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  //此文件与webpack.config的output相对应！</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>main.js:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></div><div class="line"> </div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>:<span class="string">'body'</span>,</div><div class="line">    <span class="attr">components</span>:&#123;</div><div class="line">        <span class="attr">app</span>:App</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>package.json就不说了，工程的各种东西都在里面，很重要啦。对了，里面script里加一句：<code>&quot;dev&quot;: &quot;webpack-dev-server --inline --hot --port 8088&quot;</code>。</p>
+<p>那么重点来了，webpack的配置文件webpack.config.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">    <span class="attr">entry</span>:<span class="string">'./main.js'</span>,  <span class="comment">//入口</span></div><div class="line">    output:&#123;            <span class="comment">//出口</span></div><div class="line">        path:__dirname,</div><div class="line">        <span class="attr">filename</span>:<span class="string">'build.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">module</span>:&#123; <span class="comment">//主要申明以.vue后缀的文件的lloader为vue</span></div><div class="line">        loaders:[    <span class="comment">//以.js后缀的文件的loader为babel</span></div><div class="line">            &#123;<span class="attr">test</span>:<span class="regexp">/\.vue$/</span>, <span class="attr">loader</span>:<span class="string">'vue'</span>&#125;,</div><div class="line">            &#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>, <span class="attr">loader</span>:<span class="string">'babel'</span>, <span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">babel</span>:&#123;</div><div class="line">        <span class="attr">presets</span>:[<span class="string">'es2015'</span>],</div><div class="line">        <span class="attr">plugins</span>:[<span class="string">'transform-runtime'</span>]</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>App.vue:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;h1&gt;welcome app&lt;/h1&gt;</div><div class="line">  &lt;hr&gt;</div><div class="line">  &lt;h2 @click="change"&gt;&#123;&#123;msg&#125;&#125;&lt;/hr&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  export default &#123;</div><div class="line">    data: function() &#123;</div><div class="line">      return &#123;</div><div class="line">        msg: 'webpack...'</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">    change: function() &#123;</div><div class="line">        this.msg = 'changed!!!'  </div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  // css</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>接下来运行<code>npm run dev</code>命令，将会开始运行，得到如下截图：</p>
+<p><img src="http://ofx24fene.bkt.clouddn.com/webpack01.png" alt="webpack01"></p>
+<blockquote>
+<p>到这里，我们的vue脚手架搭建完毕！</p>
+</blockquote>
+<hr>
+<p>刚刚搭建完，这样的小case不足诚意，加点bootstrap做两个vue小组件玩玩啦~<br>小组件代码就不表了，贴一个<code>App.vue</code>里的代码。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">	&lt;navbar&gt;&lt;/navbar&gt;</div><div class="line">	&lt;div class="container"&gt;</div><div class="line">		&lt;jumbotron&gt;&lt;/jumbotron&gt;	</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  import Navbar from './components/Navbar.vue'</div><div class="line">  import Jumbotron   from './components/Jumbotron.vue'</div><div class="line">  export default &#123;</div><div class="line">    data: function() &#123;</div><div class="line">      return &#123;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">    &#125;,</div><div class="line">    components: &#123;</div><div class="line">        'navbar': Navbar,</div><div class="line">        'jumbotron': Jumbotron</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style&gt;</div><div class="line">	body &#123;</div><div class="line">	  min-height: 2000px;</div><div class="line">	  padding-top: 70px;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>然后，我们<code>npm run dev</code>后就会得到以下结果：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/webpack02.jpg" alt="webpack02"></p>
+<p>哈哈哈，webpack挺爽的！分析第二篇来记录吧。<font color="red">但有个问题没解决，就是如何把bootstrap和jquery也打包到build.js里？</font></p>
+<h3 id="结语："><a href="#结语：" class="headerlink" title="结语："></a>结语：</h3><blockquote>
+<p>作为一个搞asm和C，玩OD和IDA的纯正后端，竟然学前端，我也是醉了。。。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;据说Vue-cli脚手架（全家桶）很不错，但作为初学者的我还是先从基础看起，看看脚手架的具体组建，方便以后深入学习。那么我们就开始吧！&lt;/p&gt;
+&lt;h3 id=&quot;初始化git-repo&quot;&gt;&lt;a href=&quot;#初始化git-repo&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
+    
+    
+      <category term="vue" scheme="http://jerryshi.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一起来玩openVZ洛杉矶C3-VPS的ss</title>
+    <link href="http://jerryshi.com/2016/11/30/openVZ-C3-ss-test/"/>
+    <id>http://jerryshi.com/2016/11/30/openVZ-C3-ss-test/</id>
+    <published>2016-11-30T08:46:03.000Z</published>
+    <updated>2016-11-30T08:59:05.856Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天无意中又看到了一家vps服务商，名字叫openVZ/50vz，官网做呢还是有逼格呢。随即果断买一个洛杉矶C3-256M玩玩，官方直接内置锐速，这点很吸引人嘛。<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/c3-0.png" alt="c3-0"><br>买了以后赶紧来了一个Shadowsocks Python + chacha20，然后我就有了一下测试结果。</p>
+<p><img src="http://ofx24fene.bkt.clouddn.com/img/2016/c3-1.jpg" alt="c3-1"><br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/c3-2.png" alt="c3-2"></p>
+<blockquote>
+<p>速度喜人啊，后续就是时间验证稳定性。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天无意中又看到了一家vps服务商，名字叫openVZ/50vz，官网做呢还是有逼格呢。随即果断买一个洛杉矶C3-256M玩玩，官方直接内置锐速，这点很吸引人嘛。&lt;br&gt;&lt;img src=&quot;http://ofx24fene.bkt.clouddn.com/img/2016/
+    
+    </summary>
+    
+      <category term="技术" scheme="http://jerryshi.com/categories/tech/"/>
+    
+    
+      <category term="vps" scheme="http://jerryshi.com/tags/vps/"/>
+    
+  </entry>
+  
+  <entry>
     <title>DigtialOcean学习环境使用心得</title>
     <link href="http://jerryshi.com/2016/11/29/do-dev-test/"/>
     <id>http://jerryshi.com/2016/11/29/do-dev-test/</id>
     <published>2016-11-29T07:18:50.000Z</published>
-    <updated>2016-11-29T08:19:08.128Z</updated>
+    <updated>2016-11-30T02:29:43.098Z</updated>
     
     <content type="html"><![CDATA[<p>今天刚学到手动搭架vue脚手架，但Windows环境太烂，而且大陆网络你懂的。后来上<a href="http://codig.net" target="_blank" rel="external">coding.net</a>开了一个项目，刚装好<code>3M</code>，开始下载<code>webpack</code>，fetch了半天屁都没有，而且和WebIDE的连接速度真心一个慢，敲个npm都带<code>| debounce 999</code>特效，挨不起，只能继续想办法折腾！</p>
-<p>随即在某宝花了<code>￥40.00</code>买了一个DigitalOcean的<code>$50.00</code>账户，感觉良好，性价比那叫一个高的。为啥高呢？因为DO是按时间计费的，我开一个<code>1core+512MB = $5</code>的VPS，就算24小时开机也能用10个月，关键我用完就关机，轻轻松松用一年以上了。先上一张图：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/dosf02.jpg" alt="do-sf02-512M"><br>配置么我觉得还是可以，主要图美国的网络环境了。最后我买的是美国旧金山机房的PVS，跑分大概是这样的：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/do-sf1.jpg" alt="do-sf02-512M-benchmark"></p>
+<p>随即在某宝花了<code>￥40.00</code>买了一个DigitalOcean的<code>$50.00</code>账户，感觉良好，性价比那叫一个高的。为啥高呢？因为DO是按天计费的，我开一个<code>1core+512MB = $5</code>的VPS，就算24小时开机也能用10个月，关键我用完就关机，轻轻松松用一年以上了。先上一张图：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/dosf02.jpg" alt="do-sf02-512M"><br>配置么我觉得还是可以，主要图美国的网络环境了。最后我买的是美国旧金山机房的PVS，跑分大概是这样的：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/do-sf1.jpg" alt="do-sf02-512M-benchmark"></p>
 <h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>因为VPS带宽是1Gb的关系，npm、bower各类install，都是秒秒钟的事情，而且fetch也非常快。使用下来心情很愉快！</p>
 ]]></content>
     
@@ -638,181 +717,6 @@ delete   from t_FuncControl --清空表中的记录</pre>]]></content>
       <category term="石器时代" scheme="http://jerryshi.com/tags/%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A3/"/>
     
       <category term="原创" scheme="http://jerryshi.com/tags/%E5%8E%9F%E5%88%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>凌宇阁石器登录图和制作视频教程</title>
-    <link href="http://jerryshi.com/2010/09/18/lyg-sa-denglutu/"/>
-    <id>http://jerryshi.com/2010/09/18/lyg-sa-denglutu/</id>
-    <published>2010-09-18T14:23:56.000Z</published>
-    <updated>2016-11-25T06:15:36.677Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先感谢网友”杯子”热情制作，我代劳发布。资源提取自韩服客服端。</p>
-<p>压缩包里包含登录图、登录图的制作视频教程和全部所需的工具。</p>
-<a id="more"></a>
-<p><a href="/wp/img/2010/09/salogin01.jpg"><img src="/wp/img/2010/09/salogin01.jpg" alt="" title="salogin01"></a></p>
-<p><a href="/wp/img/2010/09/salogin02.jpg"><img src="/wp/img/2010/09/salogin02.jpg" alt="" title="salogin02"></a><a href="/wp/img/2010/09/salogin03.jpg"><img src="/wp/img/2010/09/salogin03.jpg" alt="" title="salogin03"></a></p>
-<p>下载地址：<a href="http://u.115.com/file/f58f4e8fd6" target="_blank" rel="external">115网盘</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先感谢网友”杯子”热情制作，我代劳发布。资源提取自韩服客服端。&lt;/p&gt;
-&lt;p&gt;压缩包里包含登录图、登录图的制作视频教程和全部所需的工具。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="默认" scheme="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-    
-    
-      <category term="石器时代" scheme="http://jerryshi.com/tags/%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A3/"/>
-    
-      <category term="教程" scheme="http://jerryshi.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>石器时代LNS装备强化LUA脚本</title>
-    <link href="http://jerryshi.com/2010/09/16/stoneage-lns-equipplus-lua/"/>
-    <id>http://jerryshi.com/2010/09/16/stoneage-lns-equipplus-lua/</id>
-    <published>2010-09-16T10:41:58.000Z</published>
-    <updated>2016-11-25T06:15:48.917Z</updated>
-    
-    <content type="html"><![CDATA[<p>脚本名称：石器时代LNS装备强化LUA脚本<br>功能描述：仿allblue’s祝福宝石，装备强化系统，具体到AB论坛看吧<br>脚本来源：9292石器时代研究中心<br><a id="more"></a></p>
-<pre class="brush:c">
-function EquipPlus_PPlus(charaindex,itemindex,itemid)
-        local buf = Item.GetData(itemindex,%道具_原名%);
-        local buf2 = Item.GetData(itemindex,%道具_名%);
-        --1~9级需要的加强材料,最后一项不要改
-        local itemtbl = {23679,23679,23679,23679,23679,23679,23680,23680,23680,-1};
-        --1~9级需要的材料数量,最后一项不要改
-        local itemnumtbl = {1,1,1,1,1,1,1,1,1,1};
-        local level = 0;
-        if( (buf.."+1") == buf2)then
-                level = 1;
-        elseif( (buf.."+2") == buf2)then
-                level = 2;
-        elseif( (buf.."+3") == buf2)then
-                level = 3;
-        elseif( (buf.."+4") == buf2)then
-                level = 4;
-        elseif( (buf.."+5") == buf2)then
-                level = 5;
-        elseif( (buf.."+6") == buf2)then
-                level = 6;
-        elseif( (buf.."+7") == buf2)then
-                level = 7;
-        elseif( (buf.."+8") == buf2)then
-                level = 8;
-        elseif( (buf.."+9") == buf2)then
-                level = 9;
-        end
-        if(level == 9)then
-                NLG.TalkToCli(charaindex,"无法再加强.");
-                return;
-        end
-        if (Char.FindItemId(charaindex,itemtbl[level+1]) < itemnumtbl[level+1]) then
-                NLG.TalkToCli(charaindex,"缺少加强所需道具.");
-                return;
-        end
-                                        --这里是概率,现在是1/10,改10为2则1/2的概率
-        local randnum = math.floor(math.random(1, 3));
-        if(randnum == 1)then
-                if(level == 8 or level == 7)then
-                        --这是9级加强
-                        Item.SetData(itemindex,%道具_附攻%, Item.GetData(itemindex,%道具_附攻%) + 15);
-                        --加HP
-                        Item.SetData(itemindex,%道具_附体%, Item.GetData(itemindex,%道具_附体%) + 15);
-                        --加MP
-                        Item.SetData(itemindex,%道具_附气%, Item.GetData(itemindex,%道具_附气%) + 15);
-                        Item.SetData(itemindex,%道具_附防%, Item.GetData(itemindex,%道具_附防%) + 15);
-                        Item.SetData(itemindex,%道具_附敏%, Item.GetData(itemindex,%道具_附敏%) + 15);
-                else
-                        Item.SetData(itemindex,%道具_附攻%, Item.GetData(itemindex,%道具_附攻%) + 5);
-                        --加HP
-                        Item.SetData(itemindex,%道具_附体%, Item.GetData(itemindex,%道具_附体%) + 5);
-                        --加MP
-                        Item.SetData(itemindex,%道具_附气%, Item.GetData(itemindex,%道具_附气%) + 5);
-                        Item.SetData(itemindex,%道具_附防%, Item.GetData(itemindex,%道具_附防%) + 5);
-                        Item.SetData(itemindex,%道具_附敏%, Item.GetData(itemindex,%道具_附敏%) + 5);
-                end
-                local buff = Item.GetData(itemindex,%道具_原名%).."+"..level+1;
-                Item.SetData(itemindex,%道具_名%,buff);
-                local buff = Item.GetData(itemindex,%道具_说明%);
-                if level == 0 then
-                        local i,j;
-                        i,j = string.find(buff,"次加强");
-                        if(i ~=2 or j ~= 7)then
-                                buff = "1次加强"..buff;
-                        else
-                                buff = string.gsub(buff,level,level+1);
-                        end
-                else
-                        buff = string.gsub(buff,level,level+1);
-                end
-                Item.SetData(itemindex,%道具_说明%,buff);
-
-                NLG.DelItem(charaindex,itemtbl[level+1],itemnumtbl[level+1]);
-                NLG.TalkToCli(charaindex,"加强成功,请重新登陆以更新道具属性.");
-                NLG.TalkToCli(-1,"恭喜"..Char.GetData(charaindex,%对象_原名%).."成功加强装备"..Item.GetData(itemindex,%道具_原名%)..",现在是+"..level+1,%红色%);
-                return;
-        else
-                NLG.DelItem(charaindex,itemtbl[level+1],itemnumtbl[level+1]);
-                                        --降级概率,现在是1/2,改2为3则变为1/3
-                randnum = math.floor(math.random(1,2));
-                if randnum == 1 then
-                        if(level == 0)then
-                        NLG.TalkToCli(charaindex,"加强道具失败");
-                        return;
-                        end
-                        if(level == 8 or level == 7 or level == 6)then
-                                Item.SetData(itemindex,%道具_附攻%, Item.GetData(itemindex,%道具_附攻%) - 15*(level-7) - 5 * 7);
-                                Item.SetData(itemindex,%道具_附防%, Item.GetData(itemindex,%道具_附防%) - 15*(level-7) - 5 * 7);
-                                Item.SetData(itemindex,%道具_附敏%, Item.GetData(itemindex,%道具_附敏%) - 15*(level-7) - 5 * 7);
-                                Item.SetData(itemindex,%道具_附体%, Item.GetData(itemindex,%道具_附体%) - 15*(level-7) - 5 * 7);
-                                Item.SetData(itemindex,%道具_附气%, Item.GetData(itemindex,%道具_附气%) - 15*(level-7) - 5 * 7);
-                                local buff = Item.GetData(itemindex,%道具_原名%);
-                                Item.SetData(itemindex,%道具_名%,buff);
-                                local buff = Item.GetData(itemindex,%道具_说明%);
-                                buff = string.gsub(buff,level,"0");
-                                Item.SetData(itemindex,%道具_说明%,buff);
-                                NLG.TalkToCli(charaindex,"加强道具失败,降至零级");
-                        else
-                                Item.SetData(itemindex,%道具_附攻%, Item.GetData(itemindex,%道具_附攻%) - 5);
-                                Item.SetData(itemindex,%道具_附防%, Item.GetData(itemindex,%道具_附防%) - 5);
-                                Item.SetData(itemindex,%道具_附敏%, Item.GetData(itemindex,%道具_附敏%) - 5);
-                                Item.SetData(itemindex,%道具_附体%, Item.GetData(itemindex,%道具_附体%) - 5);
-                                Item.SetData(itemindex,%道具_附气%, Item.GetData(itemindex,%道具_附气%) - 5);
-                                local buff = Item.GetData(itemindex,%道具_原名%).."+"..level-1;
-                                Item.SetData(itemindex,%道具_名%,buff);
-                                local buff = Item.GetData(itemindex,%道具_说明%);
-                                buff = string.gsub(buff,level,level-1);
-                                Item.SetData(itemindex,%道具_说明%,buff);
-                                NLG.TalkToCli(charaindex,"加强道具失败,降一级");
-                                end
-
-                        return;
-                else
-                        NLG.TalkToCli(charaindex,"加强道具失败");
-                end
-
-        end
-end
-</pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;脚本名称：石器时代LNS装备强化LUA脚本&lt;br&gt;功能描述：仿allblue’s祝福宝石，装备强化系统，具体到AB论坛看吧&lt;br&gt;脚本来源：9292石器时代研究中心&lt;br&gt;
-    
-    </summary>
-    
-      <category term="默认" scheme="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-    
-    
-      <category term="石器时代" scheme="http://jerryshi.com/tags/%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A3/"/>
-    
-      <category term="lua脚本" scheme="http://jerryshi.com/tags/lua%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
