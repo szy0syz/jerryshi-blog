@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/store/theme/getters.js"],"names":["getTheme","state","theme"],"mappings":";;;;;kBAGe;AACbA,UADa,oBACHC,KADG,EACI;AACf,WAAOA,MAAMC,KAAb;AACD;AAHY,C","file":"getters.js","sourcesContent":["/**\n * Created by jerry on 2017/5/17.\n */\nexport default {\n  getTheme (state) {\n    return state.theme\n  }\n}\n"]}
