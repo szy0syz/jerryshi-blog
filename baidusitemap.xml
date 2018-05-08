@@ -4,6 +4,118 @@
 
     
   <url>
+    <loc>http://jerryshi.com/2018/04/24/chairman-it-news/</loc>
+    <lastmod>2018-04-24T03:52:23.834Z</lastmod>
+    <data>
+        <display>
+        <title>突然领悟了什么</title>
+        <pubTime>2018-04-24T03:50:15.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2018/04/08/start-python/</loc>
+    <lastmod>2018-04-08T14:47:23.964Z</lastmod>
+    <data>
+        <display>
+        <title>20180408我要学python</title>
+        <pubTime>2018-04-08T14:28:46.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2018/04/04/R7000-merlin-center-fixed/</loc>
+    <lastmod>2018-04-04T14:19:42.870Z</lastmod>
+    <data>
+        <display>
+        <title>网件R7000升级梅林新版软件中心无反应修复</title>
+        <pubTime>2018-04-04T14:12:54.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://jerryshi.com/2017/12/30/2017-summary/</loc>
+    <lastmod>2017-12-31T11:57:39.027Z</lastmod>
+    <data>
+        <display>
+        <title>2017年全年总结</title>
+        <pubTime>2017-12-30T14:46:03.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://jerryshi.com/2017/10/07/Huawei-p10plus-emmc/</loc>
+    <lastmod>2017-10-07T15:09:07.978Z</lastmod>
+    <data>
+        <display>
+        <title>华为P10plus购机及24小时内的退货记</title>
+        <pubTime>2017-10-07T14:49:22.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2017/08/18/github-100day/</loc>
+    <lastmod>2017-08-18T03:35:00.628Z</lastmod>
+    <data>
+        <display>
+        <title>第一次github连续100天打卡</title>
+        <pubTime>2017-08-18T03:18:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2017/06/11/2017-my-code-life/</loc>
+    <lastmod>2017-06-11T15:51:14.807Z</lastmod>
+    <data>
+        <display>
+        <title>2017年6月某天小感</title>
+        <pubTime>2017-06-11T03:55:00.000Z</pubTime>
+        
+        <tag>日记</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jerryshi.com/2017/06/02/zhufeng-fe-fullstack-02/</loc>
     <lastmod>2017-06-02T06:45:18.641Z</lastmod>
     <data>
@@ -27,7 +139,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/05/28/zhufeng-fe-fullstack-01/</loc>
-    <lastmod>2017-06-02T06:44:47.089Z</lastmod>
+    <lastmod>2017-06-02T06:44:47.090Z</lastmod>
     <data>
         <display>
         <title>【笔记】珠峰前端全栈培训第一周：作用域深入和面向对象编程</title>
@@ -47,7 +159,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/05/31/js-dom-base-text-class/</loc>
-    <lastmod>2017-05-31T13:57:34.491Z</lastmod>
+    <lastmod>2017-05-31T13:57:34.492Z</lastmod>
     <data>
         <display>
         <title>javascript dom 基础 ---- 关于dom元素修改小例子解析</title>
@@ -62,7 +174,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/05/23/EAS-Mobile-backend-summary/</loc>
-    <lastmod>2017-05-26T16:53:51.580Z</lastmod>
+    <lastmod>2017-05-26T16:53:51.581Z</lastmod>
     <data>
         <display>
         <title>EAS-Mobile-backend 项目总结 [持续更新]</title>
@@ -106,7 +218,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/04/25/project-summary-easreport/</loc>
-    <lastmod>2017-05-23T02:52:09.876Z</lastmod>
+    <lastmod>2017-05-23T02:52:09.877Z</lastmod>
     <data>
         <display>
         <title>EASReport项目总结</title>
@@ -126,7 +238,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/03/02/pluralsight-Object-oriented-Programming-in-JavaScript-ES6/</loc>
-    <lastmod>2017-05-23T02:50:57.857Z</lastmod>
+    <lastmod>2017-05-23T02:50:57.858Z</lastmod>
     <data>
         <display>
         <title>[pluralsight]Object-oriented Programming in JavaScript - ES6</title>
@@ -146,7 +258,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/05/18/vue-notepad-summary/</loc>
-    <lastmod>2017-05-23T02:50:05.666Z</lastmod>
+    <lastmod>2017-05-23T02:50:05.667Z</lastmod>
     <data>
         <display>
         <title>[vue2.0 在线备忘录]项目总结</title>
@@ -185,10 +297,9 @@
     </url>
 
     
-    
   <url>
     <loc>http://jerryshi.com/2017/03/24/hackintosh-gpu-issue/</loc>
-    <lastmod>2017-05-21T02:35:02.331Z</lastmod>
+    <lastmod>2017-05-21T02:35:02.332Z</lastmod>
     <data>
         <display>
         <title>黑苹果关于b150m主板桌面H530初始化问题</title>
@@ -208,7 +319,7 @@
     
   <url>
     <loc>http://jerryshi.com/2017/04/23/blog-screenshot-20140329/</loc>
-    <lastmod>2017-05-21T02:34:30.015Z</lastmod>
+    <lastmod>2017-05-21T02:34:30.016Z</lastmod>
     <data>
         <display>
         <title>当年博客顶峰时期的截图</title>
@@ -723,15 +834,35 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2008/12/24/silent-night-gift/</loc>
+    <loc>http://jerryshi.com/2010/09/16/stoneage-lns-equipplus-lua/</loc>
     <lastmod>2016-11-25T06:15:48.000Z</lastmod>
     <data>
         <display>
-        <title>平安夜&圣诞节送礼！（一些源码）</title>
-        <pubTime>2008-12-24T12:12:33.000Z</pubTime>
+        <title>石器时代LNS装备强化LUA脚本</title>
+        <pubTime>2010-09-16T10:41:58.000Z</pubTime>
         
-        <tag>源代码</tag>
+        <tag>石器时代</tag>
          
+        <tag>lua脚本</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2010/05/18/s7-200-20-hh-szy0syz/</loc>
+    <lastmod>2016-11-25T06:15:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>西门子S7-200 PLC 仿真软件[汉化中文版]</title>
+        <pubTime>2010-05-18T13:09:55.000Z</pubTime>
+        
         <tag>原创</tag>
          
          
@@ -785,28 +916,6 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2010/01/28/sa-2010-ser-cli/</loc>
-    <lastmod>2016-11-25T06:15:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>石器时代2010年最新服务端+配套客服端</title>
-        <pubTime>2010-01-28T04:28:05.000Z</pubTime>
-        
-        <tag>石器时代</tag>
-         
-        <tag>服务端</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jerryshi.com/2008/09/19/snail-story/</loc>
     <lastmod>2016-11-25T06:15:48.000Z</lastmod>
     <data>
@@ -827,14 +936,18 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2010/05/18/s7-200-20-hh-szy0syz/</loc>
+    <loc>http://jerryshi.com/2008/04/29/ro-ser/</loc>
     <lastmod>2016-11-25T06:15:48.000Z</lastmod>
     <data>
         <display>
-        <title>西门子S7-200 PLC 仿真软件[汉化中文版]</title>
-        <pubTime>2010-05-18T13:09:55.000Z</pubTime>
+        <title>仙境传说RO 服务端，可架设自己呢小私服。</title>
+        <pubTime>2008-04-29T10:25:16.000Z</pubTime>
         
-        <tag>原创</tag>
+        <tag>服务端</tag>
+         
+        <tag>仙境传说</tag>
+         
+        <tag>游戏</tag>
          
          
            
@@ -889,18 +1002,16 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2008/04/29/ro-ser/</loc>
+    <loc>http://jerryshi.com/2010/01/28/sa-2010-ser-cli/</loc>
     <lastmod>2016-11-25T06:15:48.000Z</lastmod>
     <data>
         <display>
-        <title>仙境传说RO 服务端，可架设自己呢小私服。</title>
-        <pubTime>2008-04-29T10:25:16.000Z</pubTime>
+        <title>石器时代2010年最新服务端+配套客服端</title>
+        <pubTime>2010-01-28T04:28:05.000Z</pubTime>
         
+        <tag>石器时代</tag>
+         
         <tag>服务端</tag>
-         
-        <tag>仙境传说</tag>
-         
-        <tag>游戏</tag>
          
          
            
@@ -937,28 +1048,6 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2010/09/16/stoneage-lns-equipplus-lua/</loc>
-    <lastmod>2016-11-25T06:15:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>石器时代LNS装备强化LUA脚本</title>
-        <pubTime>2010-09-16T10:41:58.000Z</pubTime>
-        
-        <tag>石器时代</tag>
-         
-        <tag>lua脚本</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jerryshi.com/2009/09/18/sa-ser-lua-cr/</loc>
     <lastmod>2016-11-25T06:15:48.000Z</lastmod>
     <data>
@@ -974,6 +1063,194 @@
            
              
               <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/12/24/silent-night-gift/</loc>
+    <lastmod>2016-11-25T06:15:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>平安夜&圣诞节送礼！（一些源码）</title>
+        <pubTime>2008-12-24T12:12:33.000Z</pubTime>
+        
+        <tag>源代码</tag>
+         
+        <tag>原创</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/07/19/ro-sea-13d88/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>仙境传说(RO)09年最新服务端：SeA_13D88</title>
+        <pubTime>2009-07-19T03:33:42.000Z</pubTime>
+        
+        <tag>服务端</tag>
+         
+        <tag>仙境传说</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/04/09/ro2-full-ser-cli/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>仙境传说II（RO2）一键启动整合版</title>
+        <pubTime>2009-04-09T12:40:15.000Z</pubTime>
+        
+        <tag>转载</tag>
+         
+        <tag>服务端</tag>
+         
+        <tag>仙境传说</tag>
+         
+        <tag>资源</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/10/15/qq-doudizhu-cracked/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>一流QQ斗地主刷分器V1.99[破解版] 带多开补丁</title>
+        <pubTime>2008-10-15T01:22:48.000Z</pubTime>
+        
+        <tag>软件</tag>
+         
+        <tag>破解</tag>
+         
+        <tag>QQ</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/10/16/qq-ddp-llk-zc-wg/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>QQ对对碰 QQ连连看 QQ找茬 最新破解外挂合集</title>
+        <pubTime>2008-10-16T11:10:17.000Z</pubTime>
+        
+        <tag>软件</tag>
+         
+        <tag>破解</tag>
+         
+        <tag>QQ</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/08/20/qq-close-ico/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>2008熄灭或隐藏QQ上部分图标的方法技巧</title>
+        <pubTime>2008-08-20T05:35:01.000Z</pubTime>
+        
+        <tag>转载</tag>
+         
+        <tag>QQ</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/11/13/qingxue-maoshanhouyi-mp3/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>青雪故事 茅山后裔 第一季MP3-64K下载</title>
+        <pubTime>2009-11-13T08:09:07.000Z</pubTime>
+        
+        <tag>原创</tag>
+         
+        <tag>有声小说</tag>
+         
+        <tag>青雪故事</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/05/22/ro-full-ser-cli/</loc>
+    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>仙境传说(RO)单机整合版(一键安装 包括服务端+客服端+注册网页)</title>
+        <pubTime>2009-05-22T02:39:11.000Z</pubTime>
+        
+        <tag>转载</tag>
+         
+        <tag>服务端</tag>
+         
+        <tag>仙境传说</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
           
         </display>
     </data>
@@ -1045,178 +1322,12 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2009/04/09/ro2-full-ser-cli/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>仙境传说II（RO2）一键启动整合版</title>
-        <pubTime>2009-04-09T12:40:15.000Z</pubTime>
-        
-        <tag>转载</tag>
-         
-        <tag>服务端</tag>
-         
-        <tag>仙境传说</tag>
-         
-        <tag>资源</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/10/16/qq-ddp-llk-zc-wg/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>QQ对对碰 QQ连连看 QQ找茬 最新破解外挂合集</title>
-        <pubTime>2008-10-16T11:10:17.000Z</pubTime>
-        
-        <tag>软件</tag>
-         
-        <tag>破解</tag>
-         
-        <tag>QQ</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/10/15/qq-doudizhu-cracked/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>一流QQ斗地主刷分器V1.99[破解版] 带多开补丁</title>
-        <pubTime>2008-10-15T01:22:48.000Z</pubTime>
-        
-        <tag>软件</tag>
-         
-        <tag>破解</tag>
-         
-        <tag>QQ</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/08/20/qq-close-ico/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>2008熄灭或隐藏QQ上部分图标的方法技巧</title>
-        <pubTime>2008-08-20T05:35:01.000Z</pubTime>
-        
-        <tag>转载</tag>
-         
-        <tag>QQ</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/11/13/qingxue-maoshanhouyi-mp3/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>青雪故事 茅山后裔 第一季MP3-64K下载</title>
-        <pubTime>2009-11-13T08:09:07.000Z</pubTime>
-        
-        <tag>原创</tag>
-         
-        <tag>有声小说</tag>
-         
-        <tag>青雪故事</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jerryshi.com/2009/07/20/ro-geathena/</loc>
     <lastmod>2016-11-25T06:15:46.000Z</lastmod>
     <data>
         <display>
         <title>仙境传说(RO)最新服务端:GEAthena v1.F2.0716</title>
         <pubTime>2009-07-20T13:24:53.000Z</pubTime>
-        
-        <tag>服务端</tag>
-         
-        <tag>仙境传说</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/05/22/ro-full-ser-cli/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>仙境传说(RO)单机整合版(一键安装 包括服务端+客服端+注册网页)</title>
-        <pubTime>2009-05-22T02:39:11.000Z</pubTime>
-        
-        <tag>转载</tag>
-         
-        <tag>服务端</tag>
-         
-        <tag>仙境传说</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/07/19/ro-sea-13d88/</loc>
-    <lastmod>2016-11-25T06:15:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>仙境传说(RO)09年最新服务端：SeA_13D88</title>
-        <pubTime>2009-07-19T03:33:42.000Z</pubTime>
         
         <tag>服务端</tag>
          
@@ -1435,28 +1546,6 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2010/04/06/pidgin-qq-msn/</loc>
-    <lastmod>2016-11-25T06:15:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等)</title>
-        <pubTime>2010-04-06T04:54:08.000Z</pubTime>
-        
-        <tag>软件</tag>
-         
-        <tag>QQ</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jerryshi.com/2009/08/21/pc-power-inside-analysis/</loc>
     <lastmod>2016-11-25T06:15:40.000Z</lastmod>
     <data>
@@ -1475,17 +1564,33 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2008/11/23/online-int-diff/</loc>
+    <loc>http://jerryshi.com/2010/05/12/new-blog-domain/</loc>
     <lastmod>2016-11-25T06:15:40.000Z</lastmod>
     <data>
         <display>
-        <title>在线函数作图器和求导积分运算器</title>
-        <pubTime>2008-11-23T11:11:12.000Z</pubTime>
+        <title>博客换了新的域名</title>
+        <pubTime>2010-05-12T14:55:50.000Z</pubTime>
         
-        <tag>学校</tag>
+        <tag>站务</tag>
          
-        <tag>数学</tag>
          
+           
+             
+              <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/04/20/ncre-2-c/</loc>
+    <lastmod>2016-11-25T06:15:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>06年4月~07年9月二级C语言笔试真题附答案</title>
+        <pubTime>2008-04-20T14:37:25.000Z</pubTime>
+        
          
            
              
@@ -1497,17 +1602,21 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2010/11/30/party-time-2010/</loc>
+    <loc>http://jerryshi.com/2010/04/06/pidgin-qq-msn/</loc>
     <lastmod>2016-11-25T06:15:40.000Z</lastmod>
     <data>
         <display>
-        <title>[活动]看视频猜人名送礼物</title>
-        <pubTime>2010-11-30T05:38:38.000Z</pubTime>
+        <title>简洁高效的即时通信客户端--Pidgin(支持QQ,MSN等)</title>
+        <pubTime>2010-04-06T04:54:08.000Z</pubTime>
         
+        <tag>软件</tag>
+         
+        <tag>QQ</tag>
+         
          
            
              
-              <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
           
         </display>
     </data>
@@ -1605,57 +1714,39 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2010/05/12/new-blog-domain/</loc>
+    <loc>http://jerryshi.com/2008/11/23/online-int-diff/</loc>
     <lastmod>2016-11-25T06:15:40.000Z</lastmod>
     <data>
         <display>
-        <title>博客换了新的域名</title>
-        <pubTime>2010-05-12T14:55:50.000Z</pubTime>
+        <title>在线函数作图器和求导积分运算器</title>
+        <pubTime>2008-11-23T11:11:12.000Z</pubTime>
         
-        <tag>站务</tag>
+        <tag>学校</tag>
          
+        <tag>数学</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2010/11/30/party-time-2010/</loc>
+    <lastmod>2016-11-25T06:15:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>[活动]看视频猜人名送礼物</title>
+        <pubTime>2010-11-30T05:38:38.000Z</pubTime>
+        
          
            
              
               <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/04/20/ncre-2-c/</loc>
-    <lastmod>2016-11-25T06:15:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>06年4月~07年9月二级C语言笔试真题附答案</title>
-        <pubTime>2008-04-20T14:37:25.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2010/07/22/lyg-shiqi-115/</loc>
-    <lastmod>2016-11-25T06:15:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>凌宇阁的石器时代单机资源集合[115网盘]</title>
-        <pubTime>2010-07-22T02:36:19.000Z</pubTime>
-        
-        <tag>石器时代</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
           
         </display>
     </data>
@@ -1745,6 +1836,26 @@
 
     
   <url>
+    <loc>http://jerryshi.com/2010/07/22/lyg-shiqi-115/</loc>
+    <lastmod>2016-11-25T06:15:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>凌宇阁的石器时代单机资源集合[115网盘]</title>
+        <pubTime>2010-07-22T02:36:19.000Z</pubTime>
+        
+        <tag>石器时代</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jerryshi.com/2006/08/03/myfreestyle/</loc>
     <lastmod>2016-11-25T06:15:38.000Z</lastmod>
     <data>
@@ -1758,48 +1869,6 @@
            
              
               <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2010/09/18/lyg-sa-denglutu/</loc>
-    <lastmod>2016-11-25T06:15:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>凌宇阁石器登录图和制作视频教程</title>
-        <pubTime>2010-09-18T14:23:56.000Z</pubTime>
-        
-        <tag>石器时代</tag>
-         
-        <tag>教程</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/09/14/kof97yk-083/</loc>
-    <lastmod>2016-11-25T06:15:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>kof97yk修改整合版 v0.83</title>
-        <pubTime>2009-09-14T04:06:13.000Z</pubTime>
-        
-        <tag>游戏</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
           
         </display>
     </data>
@@ -1955,6 +2024,48 @@
         <tag>服务端</tag>
          
         <tag>资源</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/09/14/kof97yk-083/</loc>
+    <lastmod>2016-11-25T06:15:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>kof97yk修改整合版 v0.83</title>
+        <pubTime>2009-09-14T04:06:13.000Z</pubTime>
+        
+        <tag>游戏</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2010/09/18/lyg-sa-denglutu/</loc>
+    <lastmod>2016-11-25T06:15:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>凌宇阁石器登录图和制作视频教程</title>
+        <pubTime>2010-09-18T14:23:56.000Z</pubTime>
+        
+        <tag>石器时代</tag>
+         
+        <tag>教程</tag>
          
          
            
@@ -2220,9 +2331,9 @@
         <title>永远的石器时代</title>
         <pubTime>2009-12-11T09:41:19.000Z</pubTime>
         
-        <tag>日记</tag>
-         
         <tag>石器时代</tag>
+         
+        <tag>日记</tag>
          
          
            
@@ -3101,28 +3212,6 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2009/11/23/about-ie-sa/</loc>
-    <lastmod>2016-11-25T06:15:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于浏览器，关于石器，关于最近...</title>
-        <pubTime>2009-11-23T01:13:30.000Z</pubTime>
-        
-        <tag>日记</tag>
-         
-        <tag>石器时代</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jerryshi.com/2009/11/28/2009-11-29/</loc>
     <lastmod>2016-11-25T06:15:22.000Z</lastmod>
     <data>
@@ -3130,9 +3219,9 @@
         <title>11.29</title>
         <pubTime>2009-11-28T15:39:50.000Z</pubTime>
         
-        <tag>日记</tag>
-         
         <tag>石器时代</tag>
+         
+        <tag>日记</tag>
          
          
            
@@ -3223,6 +3312,28 @@
 
     
   <url>
+    <loc>http://jerryshi.com/2009/11/23/about-ie-sa/</loc>
+    <lastmod>2016-11-25T06:15:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于浏览器，关于石器，关于最近...</title>
+        <pubTime>2009-11-23T01:13:30.000Z</pubTime>
+        
+        <tag>石器时代</tag>
+         
+        <tag>日记</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jerryshi.com/2010/02/26/2006-jp-sa-pic/</loc>
     <lastmod>2016-11-25T06:15:22.000Z</lastmod>
     <data>
@@ -3231,6 +3342,28 @@
         <pubTime>2010-02-25T16:15:08.000Z</pubTime>
         
         <tag>石器时代</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/06/06/war3-winkey/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>魔兽争霸-冰封王座_改键工具winkey1.8</title>
+        <pubTime>2008-06-06T15:27:16.000Z</pubTime>
+        
+        <tag>软件</tag>
+         
+        <tag>资源</tag>
          
          
            
@@ -3256,6 +3389,128 @@
            
              
               <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/11/29/21th-11-29/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>11.29……</title>
+        <pubTime>2008-11-29T13:44:49.000Z</pubTime>
+        
+        <tag>日记</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/04/27/22th-chernobyl/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>人类科技警钟长鸣 切尔诺贝利核事故22周年</title>
+        <pubTime>2008-04-27T03:05:40.000Z</pubTime>
+        
+        <tag>奇闻</tag>
+         
+        <tag>文摘</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/04/29/zhenfengshen-ser/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>最新 真封神服务端 内附详细安装说明。(架设自己的真封神)</title>
+        <pubTime>2008-04-29T07:46:40.000Z</pubTime>
+        
+        <tag>服务端</tag>
+         
+        <tag>游戏</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2010/08/10/yn-gmail-fake/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>云南电信gmail网站被钓鱼</title>
+        <pubTime>2010-08-10T13:16:38.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/09/18/9-1-8/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>“九一八”－－勿忘国耻</title>
+        <pubTime>2008-09-18T05:41:03.000Z</pubTime>
+        
+        <tag>日记</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/04/21/xp-iis-patch/</loc>
+    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>精简版XP 恢复IIS等系统服务补丁</title>
+        <pubTime>2008-04-21T04:59:21.000Z</pubTime>
+        
+        <tag>软件</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
           
         </display>
     </data>
@@ -3319,48 +3574,6 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2008/04/27/22th-chernobyl/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>人类科技警钟长鸣 切尔诺贝利核事故22周年</title>
-        <pubTime>2008-04-27T03:05:40.000Z</pubTime>
-        
-        <tag>奇闻</tag>
-         
-        <tag>文摘</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/09/18/9-1-8/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>“九一八”－－勿忘国耻</title>
-        <pubTime>2008-09-18T05:41:03.000Z</pubTime>
-        
-        <tag>日记</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jerryshi.com/2008/11/19/winram-cracked/</loc>
     <lastmod>2016-11-25T06:15:20.000Z</lastmod>
     <data>
@@ -3383,177 +3596,17 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2008/04/21/xp-iis-patch/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
+    <loc>http://jerryshi.com/2008/06/05/tudou-youku-look/</loc>
+    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
     <data>
         <display>
-        <title>精简版XP 恢复IIS等系统服务补丁</title>
-        <pubTime>2008-04-21T04:59:21.000Z</pubTime>
+        <title>土豆看看1.0和优酷看看 1.0</title>
+        <pubTime>2008-06-05T15:08:54.000Z</pubTime>
         
+        <tag>转载</tag>
+         
         <tag>软件</tag>
          
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2010/08/10/yn-gmail-fake/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>云南电信gmail网站被钓鱼</title>
-        <pubTime>2010-08-10T13:16:38.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/04/29/zhenfengshen-ser/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>最新 真封神服务端 内附详细安装说明。(架设自己的真封神)</title>
-        <pubTime>2008-04-29T07:46:40.000Z</pubTime>
-        
-        <tag>服务端</tag>
-         
-        <tag>游戏</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/11/29/21th-11-29/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>11.29……</title>
-        <pubTime>2008-11-29T13:44:49.000Z</pubTime>
-        
-        <tag>日记</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/06/06/war3-winkey/</loc>
-    <lastmod>2016-11-25T06:15:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>魔兽争霸-冰封王座_改键工具winkey1.8</title>
-        <pubTime>2008-06-06T15:27:16.000Z</pubTime>
-        
-        <tag>软件</tag>
-         
-        <tag>资源</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/08/27/time-flows/</loc>
-    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>杂谈：光阴如水流逝</title>
-        <pubTime>2009-08-27T10:42:28.000Z</pubTime>
-        
-        <tag>日记</tag>
-         
-        <tag>杂谈</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/05/04/votive-wall/</loc>
-    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>新货上架，许愿墙。。来许个愿吧，反正也不会实现。</title>
-        <pubTime>2008-05-04T08:50:09.000Z</pubTime>
-        
-        <tag>站务</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2008/09/18/thanks-sanlu/</loc>
-    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>感谢三鹿</title>
-        <pubTime>2008-09-18T05:19:10.000Z</pubTime>
-        
-        <tag>文摘</tag>
-         
-         
-           
-             
-              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/08/19/teleservice-appeal/</loc>
-    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>电信用户申诉完全攻略[附申诉实例]</title>
-        <pubTime>2009-08-19T14:11:01.000Z</pubTime>
-        
          
            
              
@@ -3587,14 +3640,32 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2009/08/23/tu2/</loc>
+    <loc>http://jerryshi.com/2009/08/19/teleservice-appeal/</loc>
     <lastmod>2016-11-25T06:15:18.000Z</lastmod>
     <data>
         <display>
-        <title>饭否被河蟹,twitter被墙,你用什么微博呢?新微博客:兔兔~</title>
-        <pubTime>2009-08-23T13:27:03.000Z</pubTime>
+        <title>电信用户申诉完全攻略[附申诉实例]</title>
+        <pubTime>2009-08-19T14:11:01.000Z</pubTime>
         
-        <tag>翻墙</tag>
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2008/09/18/thanks-sanlu/</loc>
+    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>感谢三鹿</title>
+        <pubTime>2008-09-18T05:19:10.000Z</pubTime>
+        
+        <tag>文摘</tag>
          
          
            
@@ -3607,16 +3678,76 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2008/06/05/tudou-youku-look/</loc>
+    <loc>http://jerryshi.com/2008/05/04/votive-wall/</loc>
     <lastmod>2016-11-25T06:15:18.000Z</lastmod>
     <data>
         <display>
-        <title>土豆看看1.0和优酷看看 1.0</title>
-        <pubTime>2008-06-05T15:08:54.000Z</pubTime>
+        <title>新货上架，许愿墙。。来许个愿吧，反正也不会实现。</title>
+        <pubTime>2008-05-04T08:50:09.000Z</pubTime>
         
-        <tag>转载</tag>
+        <tag>站务</tag>
          
-        <tag>软件</tag>
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/06/20/usb-safely-remove-cracked/</loc>
+    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>USB Safely Remove v4.1 final(4.1.5.800) 破解版</title>
+        <pubTime>2009-06-20T07:36:37.000Z</pubTime>
+        
+        <tag>破解</tag>
+         
+        <tag>原创</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/09/08/wangshuang-assembly/</loc>
+    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>王爽课后习题解答及实验解答</title>
+        <pubTime>2009-09-08T13:46:47.000Z</pubTime>
+        
+        <tag>学校</tag>
+         
+         
+           
+             
+              <breadCrumb title="默认" url="http://jerryshi.com/categories/%E9%BB%98%E8%AE%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jerryshi.com/2009/08/23/tu2/</loc>
+    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>饭否被河蟹,twitter被墙,你用什么微博呢?新微博客:兔兔~</title>
+        <pubTime>2009-08-23T13:27:03.000Z</pubTime>
+        
+        <tag>翻墙</tag>
          
          
            
@@ -3640,28 +3771,6 @@
            
              
               <breadCrumb title="生活" url="http://jerryshi.com/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jerryshi.com/2009/06/20/usb-safely-remove-cracked/</loc>
-    <lastmod>2016-11-25T06:15:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>USB Safely Remove v4.1 final(4.1.5.800) 破解版</title>
-        <pubTime>2009-06-20T07:36:37.000Z</pubTime>
-        
-        <tag>破解</tag>
-         
-        <tag>原创</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://jerryshi.com/categories/tech/"/>
           
         </display>
     </data>
@@ -3735,14 +3844,16 @@
 
     
   <url>
-    <loc>http://jerryshi.com/2009/09/08/wangshuang-assembly/</loc>
+    <loc>http://jerryshi.com/2009/08/27/time-flows/</loc>
     <lastmod>2016-11-25T06:15:18.000Z</lastmod>
     <data>
         <display>
-        <title>王爽课后习题解答及实验解答</title>
-        <pubTime>2009-09-08T13:46:47.000Z</pubTime>
+        <title>杂谈：光阴如水流逝</title>
+        <pubTime>2009-08-27T10:42:28.000Z</pubTime>
         
-        <tag>学校</tag>
+        <tag>日记</tag>
+         
+        <tag>杂谈</tag>
          
          
            

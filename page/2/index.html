@@ -165,36 +165,160 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-pluralsight-Object-oriented-Programming-in-JavaScript-ES6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js-dom-base-text-class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/02/pluralsight-Object-oriented-Programming-in-JavaScript-ES6/">[pluralsight]Object-oriented Programming in JavaScript - ES6</a>
+      <a class="article-title" href="/2017/05/31/js-dom-base-text-class/">javascript dom 基础 ---- 关于dom元素修改小例子解析</a>
     </h1>
   
 
         
-        <a href="/2017/03/02/pluralsight-Object-oriented-Programming-in-JavaScript-ES6/" class="archive-article-date">
-  	<time datetime="2017-03-02T01:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
+        <a href="/2017/05/31/js-dom-base-text-class/" class="archive-article-date">
+  	<time datetime="2017-05-31T13:57:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>其实这个教程几个月前已经看过，但没做笔记，结果忘了，悲剧。从以后起每看一个教程好好做笔记，以后得翻看的！</p>
-</blockquote>
-<h4 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a><strong>Prepare</strong></h4><p>Tooling Setup<br>package:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"dev"</span>: <span class="string">"lite-server"</span></div><div class="line">  &#125;,</div><div class="line"> <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"es6-module-loader"</span>: <span class="string">"^0.17.11"</span>,</div><div class="line">    <span class="string">"jquery"</span>: <span class="string">"^2.2.3"</span>,</div><div class="line">    <span class="string">"material-design-lite"</span>: <span class="string">"^1.1.3"</span>,</div><div class="line">    <span class="string">"systemjs"</span>: <span class="string">"^0.19.27"</span>,</div><div class="line">    <span class="string">"traceur"</span>: <span class="string">"0.0.108"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"lite-server"</span>: <span class="string">"^2.2.0"</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h4 id="Class-Basics"><a href="#Class-Basics" class="headerlink" title="Class Basics"></a><strong>Class Basics</strong></h4><p>Class Creation</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">calss Drone &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> drone = <span class="keyword">new</span> Drone();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Drone); <span class="comment">// --&gt; function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> drone); <span class="comment">// --&gt; object</span></div><div class="line"><span class="built_in">console</span>.log(drone <span class="keyword">instanceof</span> Drone); <span class="comment">// --&gt; function</span></div></pre></td></tr></table></figure>
-<p>Constructors and Properies<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Drone</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(id, name) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'in Drone constructor'</span>);</div><div class="line">    <span class="built_in">console</span>.log(id + <span class="string">'_'</span> + name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> drone = <span class="keyword">new</span> Drone(<span class="string">'A888'</span>, <span class="string">'BMW'</span>); <span class="comment">// --&gt; in Drone constructor \n A888_BMW</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Drone</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(id, name) &#123;</div><div class="line">    <span class="keyword">this</span>.id = id;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> drone = <span class="keyword">new</span> Drone(<span class="string">'A888'</span>, <span class="string">'BMW'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'drone: '</span> + drone.id + <span class="string">'_'</span> + drone[name]); <span class="comment">// --&gt; drone: A888_BMW</span></div></pre></td></tr></table></figure>
+        <p>例子出处：<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Function to change the content of t2</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">modifyText</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> t2 = <span class="built_in">document</span>.getElementById(<span class="string">"t2"</span>);</div><div class="line">  <span class="keyword">if</span> (t2.firstChild.nodeValue == <span class="string">"three"</span>) &#123;</div><div class="line">    t2.firstChild.nodeValue = <span class="string">"two"</span>;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    t2.firstChild.nodeValue = <span class="string">"three"</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// add event listener to table</span></div><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"outside"</span>);</div><div class="line">el.addEventListener(<span class="string">"click"</span>, modifyText, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<p>在例子中，我发现大牛竟然直接用<code>nodeValue</code>修改值，真低端，哥一般都用<code>innerHTML</code>，来走一个试试。纳尼！报错，说<code>t2.firstChild</code>没有<code>innerHTML</code>属性！</p>
+<p>解析：</p>
+<p>首先，我们先看下到底是谁调用了<code>nodeValue</code>这个属性，原来是一个Text的实例对象调用的，那Text到底有没<code>innerHTML</code>呢？答案是没有。Text类原型继承自Node，连跳两级HTMLElement和Element类。故问题的答案就是Text类的实例是没有innerHTML的。</p>
+<p>其次，取node对象时，大牛们直接取到了目标操作对象（那个文本）,方法是从父级node对象（firstChild取到的是Node对象，包括了Element，毕竟Element都原型继承自Node类）上用<code>.firstChild</code>获取text对象，注意这里text里是没有<code>firstElementChild</code>属性的，毕竟Text原型链上又没<code>Element</code>。取到目标对象直接修改完成！当然<code>t2.firstChild.nodeValue</code>可以改成<code>t2.innerHTML</code>来实现，但这个不够深入嘛。</p>
+<p>最后，从这个例子中，鄙人隐约感觉到大牛深深的鄙视，如是说：“小伙，你明明就是要去那个文字，干嘛拿它父级元素改”。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/31/js-dom-base-text-class/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-zhufeng-fe-fullstack-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
-          <a class="article-more-a" href="/2017/03/02/pluralsight-Object-oriented-Programming-in-JavaScript-ES6/#more">more >></a>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/28/zhufeng-fe-fullstack-01/">【笔记】珠峰前端全栈培训第一周：作用域深入和面向对象编程</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/28/zhufeng-fe-fullstack-01/" class="archive-article-date">
+  	<time datetime="2017-05-27T16:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="课时1：预解释"><a href="#课时1：预解释" class="headerlink" title="课时1：预解释"></a>课时1：预解释</h3><blockquote>
+<p>基本数据类型：number、string、Boolean、null、undefined;<br>引用数据类型：object（{}、[]、/^$/、Date）、function</p>
+</blockquote>
+<ul>
+<li><p>当浏览器加载HTML页面的时候，首先会提供一个供全局JS代码执行的环境-&gt;全局作用域（global/window），window不仅代表当前浏览器窗口对象还代表全局作用域</p>
+</li>
+<li><p>JS中定义一个函数时，首先引擎会先在内存开辟一个内存空间，然后把函数体内的代码当做<strong>字符串</strong>存入内存空间，最后把块内存的地址赋值给函数名。</p>
+</li>
+<li><p>预解释：在当前作用域中，JS代码执行之前，浏览器会首先默认把所有带var和function的进行提前声明或定义。</p>
+<ul>
+<li>理解定义和声明：<br>声明（declare）：var num; -&gt; 告诉浏览器在全局作用域中有一个num的变量了，默认值undefined<br>定义（defined）：num = 12; -&gt; 给我们声明的变量赋值</li>
+<li>对于带var和function关键字的在预解释时还是不一样的<br>var -&gt; 在预解释时只提前声明<br>function -&gt; 在预解释时提前的声明和定义都完成了</li>
+<li>预解释只发生在当前的作用域下，例如：开始只对window下的进行预解释，只有函数运行时才会对函数中的进行预解释</li>
+</ul>
+</li>
+<li><p>JS中内存的分类<br>栈内存：用来提供一个供JS代码提供的环境 -&gt; 作用域（全局作用域、私有作用域），预解释发生在栈内存当中;<br>堆内存：用来存储引用数据的值 -&gt; 对象存储的属性名和属性值，函数存储的是代码字符串;  </p>
+</li>
+<li><p>如何区分私有变量和全局变量？</p>
+<ul>
+<li>在全局作用域下声明（预解释的时候）的变量是全局变量</li>
+<li>在“私有作用域中声明的变量”和“函数的形参”都是私有变量</li>
+<li>在私有作用域中，我们的代码执行时遇到了一个变量，首先我们需要确定它是否为私有变量，如果是，则和外面作用域的变量没有任何关系；如果不是私有的，则往当前作用域的上级作用域进行查找，如果上级作用域也没有则继续往上查看，一直找到windows全局位置（作用域链）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="课时2：作用域链"><a href="#课时2：作用域链" class="headerlink" title="课时2：作用域链"></a>课时2：作用域链</h3><ul>
+<li>当函数执行的时候（直接目的：让函数体中的代码执行），首先会形成一个新的私有的作用域，然后按如下步骤执行：<ul>
+<li>如果有形参，先给形参赋值</li>
+<li>进行私有作用域的预解释</li>
+<li>私有作用域中的代码从上到下执行</li>
+<li>函数形参的一个新的私有变量保护了里面的私有变量不受外界的干扰（外面修改不了私有的，私有的也修改不了外面的）–&gt; “闭包”</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="课时3：全局变量的细节问题"><a href="#课时3：全局变量的细节问题" class="headerlink" title="课时3：全局变量的细节问题"></a>课时3：全局变量的细节问题</h3><ul>
+<li><p>私有作用域中出现的一个变量不是私有的，则往上级作用域进行查找，上级作用域没有则继续往上级查找，一直找到window为止，如果window下也没有则：</p>
+<ul>
+<li>若是获取值：console.log(total) -&gt; 报错！</li>
+<li>若是设置值：total = 100  -&gt; 相当于给window增加了一个属性并赋值</li>
+</ul>
+</li>
+<li><p>在JS中，在不进行任何特殊处理的情况下，上面的代码报错，下面的代码都不再执行</p>
+</li>
+</ul>
+<hr>
+<h3 id="课时4：预解释是一种毫无节操的机制"><a href="#课时4：预解释是一种毫无节操的机制" class="headerlink" title="课时4：预解释是一种毫无节操的机制"></a>课时4：预解释是一种毫无节操的机制</h3><blockquote>
+<p>自从学了预解释，从此节操是路人</p>
+</blockquote>
+<ul>
+<li>预解释时，只要用<code>var</code>声明的变量，不管所在的条件语块是否成立，统统提前声明</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!(<span class="string">"num"</span> <span class="keyword">in</span> <span class="built_in">window</span>)) &#123; <span class="comment">// -&gt;(!true) -&gt; false</span></div><div class="line">  <span class="keyword">var</span> num = <span class="number">12</span>  <span class="comment">// 不执行赋值操作，但得预解释给window声明属性window.num</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(num) <span class="comment">// -&gt; undefined ★</span></div></pre></td></tr></table></figure>
+<ul>
+<li>预解释的时候只对‘=’左边的表达式预解释，不对‘=’的值进行预解释！匿名函数之函数表达式：把函数定义的部分当做一个值赋值给我们的变量、元素的某一个事件。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">fn1()  <span class="comment">// -&gt; undefined() -&gt; Uncaught TypeError: fn1 is not a function</span></div><div class="line"><span class="keyword">var</span> fn1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'ok'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn2()  <span class="comment">// -&gt; ok</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'ok'</span>)</div><div class="line">&#125;</div><div class="line">fn2()  <span class="comment">// ok</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>个人建议使用fn1函数之函数表达式定义函数，这样的好处是，函数只在代码下方执行，如果函数报错，只需要网上查即可。</p>
+</blockquote>
+<ul>
+<li>执行函数定义的那个function在全局作用域下不进行代码预解释，当代码执行到这个位置时定义和执行一起完成了。自执行函数：定义和执行一起完成了</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;&#125;)(<span class="number">100</span>);</div><div class="line">~<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;&#125;(<span class="number">100</span>);</div><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;&#125;(<span class="number">100</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>函数体中<code>return</code>下面的代码虽然不执行了，但是需要进行预解释；<code>return</code>后面跟着的都是我们的返回值，所以不进行预解释；</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(num)</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> num = <span class="number">100</span></div><div class="line">&#125;</div><div class="line">fn()</div></pre></td></tr></table></figure>
+<ul>
+<li>在预解释时，如果名字已经声明过了，则不会重新再声明，但会重新赋值；在JS中，如果变量名和函数名重复了，也会覆盖！</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// window预解释执行步骤</span></div><div class="line"><span class="comment">// 声明+定义 fn = x000ff11</span></div><div class="line"><span class="comment">// 声明var fn （不会重复声明，覆盖老的fn）</span></div><div class="line"><span class="comment">// 声明（不会重复声明）+定义 fn = 0x000ff22</span></div><div class="line"><span class="comment">// -&gt; fn = 0x000ff22</span></div><div class="line">fn()  <span class="comment">// -&gt; 2</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line">fn()  <span class="comment">// -&gt; 2</span></div><div class="line"><span class="keyword">var</span> fn = <span class="number">10</span></div><div class="line">fn()  <span class="comment">// -&gt; 10() -&gt; Error: fn is not a function</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line">fn() <span class="comment">// 不执行了！</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="课时5：如何查找上级作用域"><a href="#课时5：如何查找上级作用域" class="headerlink" title="课时5：如何查找上级作用域"></a>课时5：如何查找上级作用域</h3>
+        
+          <a class="article-more-a" href="/2017/05/28/zhufeng-fe-fullstack-01/#more">more >></a>
         
       
 
@@ -229,7 +353,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/02/pluralsight-Object-oriented-Programming-in-JavaScript-ES6/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/28/zhufeng-fe-fullstack-01/">展开全文 >></a>
         </p>
       
 
@@ -247,32 +371,44 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-黑苹果（z97-a-4790K）之实操完毕" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-EAS-Mobile-backend-summary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/03/黑苹果（z97-a-4790K）之实操完毕/">黑苹果（z97-a_4790K）之实操完美结束</a>
+      <a class="article-title" href="/2017/05/23/EAS-Mobile-backend-summary/">EAS-Mobile-backend 项目总结 [持续更新]</a>
     </h1>
   
 
         
-        <a href="/2017/02/03/黑苹果（z97-a-4790K）之实操完毕/" class="archive-article-date">
-  	<time datetime="2017-02-03T01:26:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
+        <a href="/2017/05/23/EAS-Mobile-backend-summary/" class="archive-article-date">
+  	<time datetime="2017-05-23T02:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>经过不下50次的重启电脑，终于把黑苹果调试完毕。</p>
-<p>其实一开始只有唤醒有问题，其他都完美。但又不甘心，不停折腾，期间先把hdmi调了关显示器就休眠，然后上vga又失败，然后调试usb设备，然后偶尔几次唤醒完美，然后又开机不自检等各种问题，最终还是整完美了！</p>
-<p><img src="http://ofx24fene.bkt.clouddn.com//img/2017/summary.png" alt="系统概况"></p>
-        
-          <a class="article-more-a" href="/2017/02/03/黑苹果（z97-a-4790K）之实操完毕/#more">more >></a>
-        
+        <ul>
+<li><p>es6中的import引入的永远是同一地址的对象，不管你在哪里import，都是一样的对象。如果想引入的是不同对象还是用require。这其实就是所谓的静态引用！</p>
+</li>
+<li><p>文件上传formdata处理模块：<a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a></p>
+</li>
+<li><p>项目里如果有传递表单(fields)数据，还请用全能小助手<a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a>，不要用坑爹的<code>body-parser</code></p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> form = <span class="keyword">new</span> formidable.IncomingForm(); <span class="comment">// 实例化子类</span></div><div class="line">form.uploadDir = <span class="string">'./public/img/'</span> + type; <span class="comment">// 定义上传路径。注意：这里formidable是从node_modules来的，所以'./'所指的是整个程序的CWD。</span></div><div class="line">form.parse(req, <span class="keyword">async</span> (err, fields, files) =&gt; &#123; <span class="comment">// 转换formdata，指明callback是异步，里面有await！</span></div><div class="line">  <span class="comment">// 此时上传文件名字是随机的，需改名。</span></div><div class="line">  <span class="keyword">const</span> extname = path.extname(files.upload.name); <span class="comment">// 获取文件后缀名 .jpg</span></div><div class="line">  <span class="comment">// fs.unlink(files.upload.path) // 在尝试修改文件失败后记得截图与文件的链接</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>图片文件缩放模块： <a href="https://github.com/aheckmann/gm" target="_blank" rel="external">gm</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">gm(repath) <span class="comment">// 缩放图片尺寸</span></div><div class="line">            .resize(<span class="number">400</span>, <span class="number">400</span>, <span class="string">'!'</span>) <span class="comment">// 限制大小</span></div><div class="line">            .write(repath, <span class="keyword">async</span> (err) =&gt; &#123;</div><div class="line">              <span class="keyword">if</span> (err) &#123; <span class="comment">// 尝试写入，报错则reject</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'改写图片尺寸失败'</span>);</div><div class="line">                fs.unlink(repath);</div><div class="line">                reject(err);</div><div class="line">              &#125; <span class="keyword">else</span> &#123;</div><div class="line">                resolve(repath.replace(<span class="regexp">/^\.\/public/</span>, <span class="string">''</span>)); <span class="comment">// 所有成功只返回图片路径，替换'/publc'</span></div><div class="line">              &#125;</div><div class="line">            &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>express中权限严重中间件</li>
+</ul>
+<p>需求：在路由中，除某小部分路由以外全部加入权限验证<br>实现：在router index中，先把不需要验证的路由写上面，需要验证的路由写下面，中间用<code>app.use(Middleware)</code>进行权限验证，在中间件中记得<code>next()</code>往下一步执行。</p>
+
       
 
       
@@ -280,11 +416,37 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">express</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/03/黑苹果（z97-a-4790K）之实操完毕/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/23/EAS-Mobile-backend-summary/">展开全文 >></a>
         </p>
       
 
@@ -302,43 +464,399 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-黑苹果（hackintosh）之4790K实践手记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue-happyfri-summart" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/24/黑苹果（hackintosh）之4790K实践手记/">黑苹果（MacOS Sierra 10.12.22）之4790K实践手记</a>
+      <a class="article-title" href="/2017/05/23/vue-happyfri-summart/">[vue2.0 happyfri]项目总结</a>
     </h1>
   
 
         
-        <a href="/2017/01/24/黑苹果（hackintosh）之4790K实践手记/" class="archive-article-date">
-  	<time datetime="2017-01-24T08:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-24</time>
+        <a href="/2017/05/23/vue-happyfri-summart/" class="archive-article-date">
+  	<time datetime="2017-05-23T02:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先查了下资料：[Building a CustoMac: Buyer’s Guide January 2016][1]</p>
-<p>再看看我的配置：</p>
-<ul>
-<li>Core i7-4790K</li>
-<li>Z97-A/USB 3.1 (<a href="http://www.asus.com.cn/Motherboards/Z97AUSB_31/" target="_blank" rel="external">http://www.asus.com.cn/Motherboards/Z97AUSB_31/</a>)</li>
-<li>SSD: Samsung 850 EVO 250GB</li>
-<li>RAM: G.SKILL F3-2400C11S-8GSR*2</li>
-<li>Cases: JONSBO QT01</li>
-<li>PSUs: SUPER FLOWER SF-550P14XE</li>
-<li>Accessories: Intel 7260AC 867M</li>
-</ul>
-<p>结论是除了7260的无限网卡不行以外其他都OK，那么就开始做吧。</p>
-<p>在看教程时，发现<code>UniBeast</code>在竟然是在OS X系统下才能运行，再者找了macOS Sierra半天，没找到地方下。好吧，哥只能在VM里先装个<code>OS X 10.11 EI Capitan</code>，然后下macOS Sierra和运行<code>UniBeast</code>。然后就开始装了，一路顺畅啊！</p>
-<blockquote>
-<p>有点搞笑的是，台式机没条件接有线，还好我儿子不知从拿个箱子里翻出来一个2013年买的TL-WR800N便携路由出来把玩，我上官网看了下其竟然有“Client”工作模式，可以把无线信号转成有线的，果断用起！但问题是用了TL-WR800N后下测速只有100M左右速度，而我家宽带是200M。</p>
+        <blockquote>
+<p>其实应该叫GET到的知识点更好听点！</p>
 </blockquote>
-<p><img src="http://ofx24fene.bkt.clouddn.com/img/2017/IMG_20170123_224524_Jc.jpg" alt="img0"><br><img src="http://ofx24fene.bkt.clouddn.com/img/2017/IMG_20170124_002300_Jc.jpg" alt="img1"></p>
+<ul>
+<li><p>如果<code>XMLHttpRequest</code>不存在可以使用<code>ActiveXObject</code>来初始异步请求对象；</p>
+</li>
+<li><p><code>mapState</code>辅助函数，一次性生成三个计算属性。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  <span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    <span class="attr">computed</span>: mapState(&#123;</div><div class="line">      <span class="attr">itemNum</span>: <span class="function"><span class="params">state</span> =&gt;</span> state.itemNum,</div><div class="line">      <span class="attr">level</span>: <span class="function"><span class="params">state</span> =&gt;</span> state.level,</div><div class="line">      <span class="attr">itemDetail</span>: <span class="function"><span class="params">state</span> =&gt;</span> state.itemDetail</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>在项目components的<code>itemcontainer.vue</code>里，使用<code>v-if</code>判断存了两个page。通过父组件传入的<code>fatherComponent</code>判断是生成home页面还是item页面。</p>
+</li>
+<li><p>在<code>itemcontainer.vue</code>组件中，通过计算属性绑定输入题库数组中的题目和选项，然后通过按钮事件改编题库指针后切换下一题，同时还把所选选项唯一id保存。</p>
+</li>
+<li><p>项目流程图</p>
+</li>
+</ul>
+<p><img src="http://ofx24fene.bkt.clouddn.com//img/blog/wheel-happyfri%20flow%20chart.svg" alt="flowChart"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/23/vue-happyfri-summart/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue-notepad-summary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/18/vue-notepad-summary/">[vue2.0 在线备忘录]项目总结</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/18/vue-notepad-summary/" class="archive-article-date">
+  	<time datetime="2017-05-18T12:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Vuex。主要由<code>state</code>、<code>mutations</code>、<code>actions</code>和<code>getters</code>构成（<code>modules</code>为模块化）。<ul>
+<li><code>state</code>好比数据库的具体实现，要存什么东西就它管了；</li>
+<li><code>getters</code>好比可编程获取器，项目读取有些数据要排序过滤什么的，用它妥妥的;</li>
+<li><code>mutations</code>，字面意思“突变”，“更改 Vuex 的 store 中的状态的唯一方法是提交 mutation”，可以看出要commit提交才能改变store的状态。<code>mutations</code>定义的是状态改变的方法，但我们不能直接调用<code>mutations</code>，我们需要用commit提交或者转交给<code>actions</code>来处理。<code>mutations</code>方法中第一个参数是state状态对象，而第二个参数是一个payload负载，负载可以是变量或者对象。<code>mutations</code>的方法必须是同步事务！</li>
+<li><code>actions</code>，字面意思就是“动作”，但怎么动法请问<code>mutations</code>去，使用时需用<code>dispatch</code>调用<code>actions</code>。其有两个特点，只commit提交mutations方法，不能直接去修改store状态；可以提交<strong>异步</strong>操作。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Vuex的运行流程</p>
+<ul>
+<li><code>self.$store.dispatch(&#39;addevent&#39;, params)</code>：在Store对象中，通过dispatch派遣一个actions动作，动作的名称叫’addevent’；</li>
+<li>actions中，<code>addevent: ({ commit }, payload) =&gt; commit(&#39;ADDEVENT&#39;, {items: payload})</code>，找到明教’addevent’的动作，它带一个负载对象一并commit提交到<code>mutations</code>中；</li>
+<li>mutations中，<code>ADDEVENT (states, payload) { states.list = payload.items}</code>，找到名叫’ADDEVENT’的方法名，操作states状态的改变；</li>
+<li>views中，Vue框架根据state的改变自动更新视图views。</li>
+<li>这样，一次完美的单向数据流执行完毕！</li>
+</ul>
+<p><img src="http://ofx24fene.bkt.clouddn.com//img/2017/flow.png" alt="actions"></p>
+<hr>
+<ul>
+<li><p>如果项目复杂，选择模块化的使用store管理。例如event是一个store，而theme又是一个sotre。最后在定义中使用<code>module</code>关键字载入这些store;</p>
+</li>
+<li><p>父子组件通讯。在父组件的template中<code>&lt;nDialog :msg=&quot;tips&quot;&gt;&lt;/nDialog&gt;</code>；子组件中，<code>props: [&#39;msg&#39;]</code>。这样就在子组件中就可以使用由父组件传递进来<code>msg</code>变量。原则就是，父组件定义子组件时，在标签里提前预留一个标签，然后在子组件中定义一个属性数组接收，但要用引号引起属性名！</p>
+</li>
+<li><p>子组件调用父组件事件。在子组件的<code>methods</code>里定义方法，执行<code>this.$emit(&#39;cancel&#39;)</code>。此时子组件就会冒泡发散<code>cancel</code>这个动作；我们又得现在父组件定义子组件写<code>v-on:sure=&quot;sureDialog&quot;</code>，提前监听sure事件。这样子组件就可以调用到父组件的方法。</p>
+</li>
+<li><p>Vuex中，可以把sates的状态封装读写放到一个数据访问接口中。</p>
+</li>
+<li><p>localStore，话说这个HTML5 API真的很给力嘛。简单几个<code>getItem</code>，<code>setItem</code>和<code>removeItem</code>方法就搞定，其他真没什么说的。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/18/vue-notepad-summary/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-project-summary-easreport" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/25/project-summary-easreport/">EASReport项目总结</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/25/project-summary-easreport/" class="archive-article-date">
+  	<time datetime="2017-04-25T08:48:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Object-keys-方法解析"><a href="#Object-keys-方法解析" class="headerlink" title="Object.keys()方法解析"></a>Object.keys()方法解析</h3><ul>
+<li>传入对象，返回属性名</li>
+<li>传入字符串，返回索引</li>
+<li>构造函数 返回空数组或者属性名</li>
+<li>数组 返回索引</li>
+</ul>
+<h3 id="为Array添加一个分组方法"><a href="#为Array添加一个分组方法" class="headerlink" title="为Array添加一个分组方法"></a>为Array添加一个分组方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">Array</span>.prototype, <span class="string">'group'</span>, &#123;</div><div class="line">  <span class="attr">enumerable</span>: <span class="literal">false</span>,    <span class="comment">//不可能枚举</span></div><div class="line">  value: <span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> map = &#123;&#125;;</div><div class="line">    <span class="keyword">this</span>.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> k = key(e); <span class="comment">//‘key’其实是函数，循环时将数组中每个元素传入key函数求出某属性/字段的值</span></div><div class="line">      map[k] = map[k] || []; <span class="comment">//通过索引看分组的对象是否存在，不存在初始化空数组；</span></div><div class="line">      map[k].push(e); <span class="comment">//将原始元素推入数组</span></div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//此时map对象结构：&#123;"你":[&#123;...&#125;,&#123;...&#125;], "我":[&#123;...&#125;,&#123;...&#125;,&#123;...&#125;], "他":&#123;[...]&#125;&#125;</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(map).map(<span class="function"><span class="keyword">function</span> (<span class="params">k</span>) </span>&#123; <span class="comment">//拿到对象的属性数组，此时k为属性名</span></div><div class="line">      <span class="keyword">return</span> &#123; <span class="attr">key</span>: k, <span class="attr">data</span>: map[k] &#125;; <span class="comment">//此时修改map对象元素格式&#123;key: "你", data: [metadata]&#125;</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这函数真是精巧，不愧是从stackflow爬来的。</p>
+</blockquote>
+<h3 id="神一般存在的reduce函数"><a href="#神一般存在的reduce函数" class="headerlink" title="神一般存在的reduce函数"></a>神一般存在的reduce函数</h3><p>arr.reduce(callback[, initialValue]) </p>
+<ul>
+<li><p>callback（一个在数组中每一项上调用的函数，接受四个函数）：</p>
+<ul>
+<li>previousValue/accumulator（上一次调用回调函数时的返回值，或者初始值，当然也可以理解成累加器）</li>
+<li>currentValue（当前正在处理的数组元素）</li>
+<li>currentIndex（当前正在处理的数组元素下标）</li>
+<li>array（调用reduce()方法的数组）</li>
+<li>initialValue（可选的初始值。作为第一次调用回调函数时传给previousValue的值）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>项目中用它解决了很多统计、数组修改问题。还有个优点，reduce有效防止爆内存，因为V8递归时，调用栈超过一定数量就爆，但reduce有效避免了调用栈过多问题。</p>
+</blockquote>
+<h3 id="express-param-name-callback"><a href="#express-param-name-callback" class="headerlink" title="express().param([name], callback)"></a>express().param([name], callback)</h3><p>在路由中，可以检测req中的请求参数后处理。可以一个Router()的实例设置一个param。</p>
+<h3 id="设计步骤"><a href="#设计步骤" class="headerlink" title="设计步骤"></a>设计步骤</h3><blockquote>
+<p>首先，搭好项目框架。这个技能真只有多些项目，多读大牛的项目来提升；<br>其次，编码过程中最好附带写好文档，如果可以提前写好文档。例如某个处理流程中对象的结果，明确的写出来。<br>最后，做好测试。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/25/project-summary-easreport/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-blog-screenshot-20140329" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/23/blog-screenshot-20140329/">当年博客顶峰时期的截图</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/23/blog-screenshot-20140329/" class="archive-article-date">
+  	<time datetime="2017-04-23T12:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>突然看到截个图留念</p>
+</blockquote>
+<p><img src="http://ofx24fene.bkt.clouddn.com//img/2017/blog_pic2.jpg" alt="pic1"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/生活/" class="article-tag-list-link color3">生活</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/23/blog-screenshot-20140329/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-hackintosh-gpu-issue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/24/hackintosh-gpu-issue/">黑苹果关于b150m主板桌面H530初始化问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/24/hackintosh-gpu-issue/" class="archive-article-date">
+  	<time datetime="2017-03-24T01:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在GA-B150M-D3H主板和I3-6100上装黑苹果，其他所有问题都完美，就是显卡初始化有问题，我也在pcbeta、tonymacx86、insanelymac上爬帖无数，仍是无果，但我跑Geekbench4的GPU部分分数却很正常，罢了，不去浪费时间了。</p>
+<p>问题描述，这个图其实很难抓拍，不到半秒~<br><img src="http://ofx24fene.bkt.clouddn.com//img/2017/WechatIMG2-squashed.jpeg" alt="01"></p>
+<p>跑分明明很正常啊。<br><img src="http://ofx24fene.bkt.clouddn.com//img/2017/geekbench2.png" alt="02"></p>
+<p>关于此问题的探索止步于：<a href="https://pikeralpha.wordpress.com/2017/01/14/does-apple-load-microcode-for-the-igpu/" target="_blank" rel="external">Pike’s Universum - Does Apple load microcode for the IGPU?</a></p>
 
       
 
@@ -373,594 +891,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/24/黑苹果（hackintosh）之4790K实践手记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-电信200M光宽带安装体验记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/电信200M光宽带安装体验记/">电信200M光宽带安装体验记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/12/电信200M光宽带安装体验记/" class="archive-article-date">
-  	<time datetime="2017-01-12T06:22:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2016年12月底，经过不假思索的考虑就装了200M的电信光宽带，后来想想，觉得还真事有点被坑的感觉。</p>
-<p>宽带套餐和费用如下：</p>
-<ul>
-<li>200M电信宽带一条</li>
-<li>三张手机卡，其中月流量为1G全国和16G市内，1000分钟通话</li>
-<li>高清机顶盒／1000M光线猫各一个</li>
-<li>费用为：848初次缴费，有200元实时网费，以后每月交159，套餐期5年！</li>
-</ul>
-<p>使用下来速度倒是的确快了，相比昆广网络，但真没多少资源速度能到24MB/s啊，除非连昆明电信机房测速！</p>
-<p>期间，为了把无线网络速度爆满，买了个800块网件的R7000无线路由，后来发现台式机USB无线网卡是个坑，又买了120块的intel-7260-876M PCI网卡(后来玩黑苹果发现这货不行，得换tp的n900)。后来速度终于爆满了。还把R7000刷了梅林固件小宝版，装了ss在路由器里，用起来效果不错哦！</p>
-<p><img src="http://ofx24fene.bkt.clouddn.com//img/2017/%E6%97%A0%E6%A0%87%E9%A2%98%E5%AE%BD%E5%B8%A63.png" alt="img1"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">network</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/生活/" class="article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/12/电信200M光宽带安装体验记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript闭包的底层运行机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/10/JavaScript闭包的底层运行机制/">JavaScript闭包的底层运行机制</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/10/JavaScript闭包的底层运行机制/" class="archive-article-date">
-  	<time datetime="2017-01-10T09:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="How-do-JavaScript-closures-work-under-the-hood"><a href="#How-do-JavaScript-closures-work-under-the-hood" class="headerlink" title="How do JavaScript closures work under the hood"></a>How do JavaScript closures work under the hood</h1><hr>
-<blockquote>
-<p>昨天晚上看《JavaScript权威指南》正好看到闭包，此时已经是12点多，心想赶着看完睡觉，太晚睡长痘痘。结果把最后一个例子看完，大脑里还是懵的。然后又上YouTube看了下视频教程，但讲的还是有点懵，索性关机睡觉。第二天上午，赶紧上<code>stackoverflow</code>和<code>quora</code>搜索，结果就搜到这篇文字，写得太好了，就转载在博客里以后反复研读。</p>
-</blockquote>
-<p>我研究JavaScript闭包（closure）已经有一段时间了。我之前只是学会了如何使用它们，而没有透彻地了解它们具体是如何运作的。那么，究竟什么是闭包？</p>
-<p>Wikipedia给出的解释并没有太大的帮助。闭包是什么时候被创建的，什么时候被销毁的？具体的实现又是怎么样的？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> myClosure = (<span class="function"><span class="keyword">function</span> <span class="title">outerFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> hidden = <span class="number">1</span>;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">inc</span>: <span class="function"><span class="keyword">function</span> <span class="title">innerFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> hidden++;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;());</div><div class="line">myClosure.inc();  <span class="comment">// 返回 1</span></div><div class="line">myClosure.inc();  <span class="comment">// 返回 2</span></div><div class="line">myClosure.inc();  <span class="comment">// 返回 3</span></div><div class="line"><span class="comment">// 相信对JS熟悉的朋友都能很快理解这段代码</span></div><div class="line"><span class="comment">// 那么在这段代码运行的背后究竟发生了怎样的事情呢？</span></div></pre></td></tr></table></figure>
-<p>现在，我终于知道了答案，我感到很兴奋并且决定向大家解释这个答案。至少，我一定是不会忘记这个答案的。</p>
-<blockquote>
-<p>Tell me and I forget. Teach me and I remember. Involve me and I learn.<br>© Benjamin Franklin</p>
-</blockquote>
-<p>并且，在我阅读与闭包相关的现存的资料时，我很努力地尝试着去在脑海中想想每个事物之间的联系：对象之间是如何引用的，对象之间的继承关系是什么，等等。我找不到关于这些负责关系的很好的图表，于是我决定自己画一些。</p>
-<p>我将假设读者对JavaScript已经比较熟悉了，知道什么是全局对象，知道函数在JavaScript当中是“first-class objects”，等等。</p>
-        
-          <a class="article-more-a" href="/2017/01/10/JavaScript闭包的底层运行机制/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">niubility</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/10/JavaScript闭包的底层运行机制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue-cli-test-summary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/vue-cli-test-summary/">手动组建 Vue 脚手架实践 - 心得</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/06/vue-cli-test-summary/" class="archive-article-date">
-  	<time datetime="2016-12-06T15:16:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>It is a 流程.</p>
-</blockquote>
-<p>文字描述版：↓↓<br>首先运行命令<code>npm build</code>(<code>webpack -p</code>)，此命令可以理解为生成并压缩。随后webpack开始在当前目录加载<code>webpack.config.js</code>文件，其内容主要包含三大块，入口、出口和模块三部分，我们在模块module里配置各种loader，有vue-loader简写成vue，有”js”的loader,一般用babel作js的loader，当然也有css-loader。在配置babel时，需要配置<code>presets: [&#39;es2015&#39;]</code>。在<code>main.js</code>里，就是该程序的入口点，通过该js下游不停填充子组建来构造一个完整的App。</p>
-<p>流程图描述版：↓↓<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/lct.jpg" alt="lct1"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vuejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/vue-cli-test-summary/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue-pits" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/vue-pits/">vue2.0 - 遇到的坑记录（长期更新）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/06/vue-pits/" class="archive-article-date">
-  	<time datetime="2016-12-06T15:13:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>第01坑：组件名<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">components: &#123;         <span class="comment">//Vue.js v2.1.4</span></div><div class="line">    <span class="string">'szyGrid'</span>: Grid   <span class="comment">//组件名不能用驼峰命名法！</span></div><div class="line">    <span class="string">'szu-Grid'</span>: Grid  <span class="comment">//组件名不能用链接符！</span></div><div class="line">    <span class="string">'szygrid'</span>: Grid   <span class="comment">//好了，pass！另外在全局里定义也只能这样！</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vuejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/vue-pits/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue-instance-lifecycle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/vue-instance-lifecycle/">vuejs - 实例的生命周期</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/06/vue-instance-lifecycle/" class="archive-article-date">
-  	<time datetime="2016-12-06T15:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://ofx24fene.bkt.clouddn.com/img/2016/vuejs-cyc1.png" alt="vue-cyc1"></p>
-        
-          <a class="article-more-a" href="/2016/12/06/vue-instance-lifecycle/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vuejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/vue-instance-lifecycle/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue-cli-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/01/vue-cli-test/">手动组建 Vue 脚手架实践</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/01/vue-cli-test/" class="archive-article-date">
-  	<time datetime="2016-12-01T11:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>据说Vue-cli脚手架（全家桶）很不错，但作为初学者的我还是先从基础看起，看看脚手架的具体组建，方便以后深入学习。那么我们就开始吧！</p>
-<h3 id="初始化git-repo"><a href="#初始化git-repo" class="headerlink" title="初始化git repo"></a>初始化git repo</h3><p>为了方便，我们还是新建一个repo（其实是为了以后复习代码）。我在github已经建好，名字叫：<code>vue-cli-test</code>。先cloone到本地：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/szy0syz/vue-cli-test.git vuecli</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="vue-cli项目结构"><a href="#vue-cli项目结构" class="headerlink" title="vue-cli项目结构"></a>vue-cli项目结构</h3><p>在创建之前，先看看vue-cli脚手架的项目最小化结构：</p>
-<blockquote>
-<pre><code>|-- index.html
-|-- main.js                入口文件
-|-- App.vue                vue文件，官方推荐命名法
-|-- package.json        工程文件(项目依赖、名称、配置)
-|-- webpack.config.js    webpack配置文件
-</code></pre></blockquote>
-<p>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app</span>&gt;</span><span class="tag">&lt;/<span class="name">app</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  //此文件与webpack.config的output相对应！</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>main.js:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></div><div class="line"> </div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>:<span class="string">'body'</span>,</div><div class="line">    <span class="attr">components</span>:&#123;</div><div class="line">        <span class="attr">app</span>:App</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>package.json就不说了，工程的各种东西都在里面，很重要啦。对了，里面script里加一句：<code>&quot;dev&quot;: &quot;webpack-dev-server --inline --hot --port 8088&quot;</code>。</p>
-<p>那么重点来了，webpack的配置文件webpack.config.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">    <span class="attr">entry</span>:<span class="string">'./main.js'</span>,  <span class="comment">//入口</span></div><div class="line">    output:&#123;            <span class="comment">//出口</span></div><div class="line">        path:__dirname,</div><div class="line">        <span class="attr">filename</span>:<span class="string">'build.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">module</span>:&#123; <span class="comment">//主要申明以.vue后缀的文件的lloader为vue</span></div><div class="line">        loaders:[    <span class="comment">//以.js后缀的文件的loader为babel</span></div><div class="line">            &#123;<span class="attr">test</span>:<span class="regexp">/\.vue$/</span>, <span class="attr">loader</span>:<span class="string">'vue'</span>&#125;,</div><div class="line">            &#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>, <span class="attr">loader</span>:<span class="string">'babel'</span>, <span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">babel</span>:&#123;</div><div class="line">        <span class="attr">presets</span>:[<span class="string">'es2015'</span>],</div><div class="line">        <span class="attr">plugins</span>:[<span class="string">'transform-runtime'</span>]</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>App.vue:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;h1&gt;welcome app&lt;/h1&gt;</div><div class="line">  &lt;hr&gt;</div><div class="line">  &lt;h2 @click="change"&gt;&#123;&#123;msg&#125;&#125;&lt;/hr&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  export default &#123;</div><div class="line">    data: function() &#123;</div><div class="line">      return &#123;</div><div class="line">        msg: 'webpack...'</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">    change: function() &#123;</div><div class="line">        this.msg = 'changed!!!'  </div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  // css</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>接下来运行<code>npm run dev</code>命令，将会开始运行，得到如下截图：</p>
-<p><img src="http://ofx24fene.bkt.clouddn.com/webpack01.png" alt="webpack01"></p>
-<blockquote>
-<p>到这里，我们的vue脚手架搭建完毕！</p>
-</blockquote>
-<hr>
-<p>刚刚搭建完，这样的小case不足诚意，加点bootstrap做两个vue小组件玩玩啦~<br>小组件代码就不表了，贴一个<code>App.vue</code>里的代码。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">	&lt;navbar&gt;&lt;/navbar&gt;</div><div class="line">	&lt;div class="container"&gt;</div><div class="line">		&lt;jumbotron&gt;&lt;/jumbotron&gt;	</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  import Navbar from './components/Navbar.vue'</div><div class="line">  import Jumbotron   from './components/Jumbotron.vue'</div><div class="line">  export default &#123;</div><div class="line">    data: function() &#123;</div><div class="line">      return &#123;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">    &#125;,</div><div class="line">    components: &#123;</div><div class="line">        'navbar': Navbar,</div><div class="line">        'jumbotron': Jumbotron</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style&gt;</div><div class="line">	body &#123;</div><div class="line">	  min-height: 2000px;</div><div class="line">	  padding-top: 70px;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>然后，我们<code>npm run dev</code>后就会得到以下结果：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/webpack02.jpg" alt="webpack02"></p>
-<p>哈哈哈，webpack挺爽的！分析第二篇来记录吧。<font color="red">但有个问题没解决，就是如何把bootstrap和jquery也打包到build.js里？</font></p>
-<p>2016-12-03更新：暂时记录下封装css代码，好像有点问题，后续更新修改。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;   <span class="comment">//import './lib/bootstrap/css/bootstrap.css'</span></div><div class="line">  loaders:[</div><div class="line">    &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: ExtractTextPlugin.extract(<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>) &#125;</div><div class="line">  ]</div><div class="line">&#125;,</div><div class="line"><span class="attr">plugins</span>: [</div><div class="line">      <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"styles.css"</span>)</div><div class="line">  ]</div></pre></td></tr></table></figure></p>
-<h3 id="结语："><a href="#结语：" class="headerlink" title="结语："></a>结语：</h3><blockquote>
-<p>作为一个搞asm和C，玩OD和IDA的纯正后端，竟然学前端，我也是醉了。。。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vuejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/01/vue-cli-test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-openVZ-C3-ss-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/30/openVZ-C3-ss-test/">一起来玩openVZ洛杉矶C3-VPS的ss</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/30/openVZ-C3-ss-test/" class="archive-article-date">
-  	<time datetime="2016-11-30T08:46:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天无意中又看到了一家vps服务商，名字叫openVZ/50vz，官网做呢还是有逼格呢。随即果断买一个洛杉矶C3-256M玩玩，官方直接内置锐速，这点很吸引人嘛。<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/c3-0.png" alt="c3-0"><br>买了以后赶紧来了一个Shadowsocks Python + chacha20，然后我就有了一下测试结果。</p>
-<p><img src="http://ofx24fene.bkt.clouddn.com/img/2016/c3-1.jpg" alt="c3-1"><br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/c3-2.png" alt="c3-2"></p>
-<blockquote>
-<p>速度喜人啊，后续就是时间验证稳定性。</p>
-</blockquote>
-<hr>
-<p><img src="http://ofx24fene.bkt.clouddn.com/img/2016/haha01.jpg" alt="haha01"><br><strong>不对，似乎我都有儿子了！^_^</strong></p>
-<hr>
-<p>2016年12月28日：<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/Image.png" alt="timeok"></p>
-<hr>
-<p>2016年12月29日：(好雄起）<br><img src="http://ofx24fene.bkt.clouddn.com/img/2016/vs2.png" alt="timeok2"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vps</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/30/openVZ-C3-ss-test/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/24/hackintosh-gpu-issue/">展开全文 >></a>
         </p>
       
 
@@ -980,7 +911,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -992,7 +923,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Jerry Shi
+    		&copy; 2018 Jerry Shi
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten | <a href="http://www.miitbeian.gov.cn/" rel="external nofollow">滇ICP备16008406号</a>
@@ -1072,15 +1003,15 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">石器时代</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日记</a>
               </li>
              
               <li class="article-tag-list-item">
